@@ -110,4 +110,8 @@ fabric.properties
 .idea/**/markdown-navigator.xml
 .idea/**/markdown-navigator/
 
+.idea
+
 # End of https://www.gitignore.io/api/laravel,phpstorm
+
+.rnd
