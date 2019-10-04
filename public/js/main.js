@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /**
  * Toggle company form page and check if all inputs are not empty before to change page
  * @param  {Integer}  startId          id of start page, this page will be hidden
@@ -96,3 +97,13 @@ function placeMarker(location) {
         map: map
     });
 }
+=======
+// Dom is loaded
+
+(function() {
+  document.getElementById("btnNextStep1").addEventListener("click", function(e){
+    e.target.parentElement.style.display = 'none'
+  });
+
+})();
+>>>>>>> add begin of companies register form

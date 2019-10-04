@@ -16,10 +16,19 @@ Route::get('/', function () {
 });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 Route::resource('companies', 'CompaniesController')->only(['create', 'store', 'show']);
 
 >>>>>>> considered comapnies as resources
+=======
+Route::get('/companies/create', function() {
+  return view('companies.create');
+});
+
+//Route::resource('companies', 'CompaniesController')->only(['create, store, show']);
+
+>>>>>>> add begin of companies register form
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
