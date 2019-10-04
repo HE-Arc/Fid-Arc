@@ -18,7 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" >
 </head>
 <body>
     <div id="app">
@@ -84,11 +84,9 @@
         <main class="py-4">
             @yield('content')
         </main>
-        <footer class="footer mt-auto py-3">
-          <div class="container">
-            <span class="text-muted">Place sticky footer content here.</span>
-          </div>
-        </footer>
+        <nav id="footer" class="navbar fixed-bottom navbar-dark bg-dark bg-faded">
+          <small style="color:white;">Copyright &copy; 2019, Fid-Arc</small>
+        </nav>
     </div>
   </body>
 </html>
