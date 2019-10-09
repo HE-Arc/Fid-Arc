@@ -4,9 +4,7 @@
 
 <div class="container">
     <h1>Lorem Ipsum</h1>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error excepturi, quidem asperiores nisi at et ducimus esse. Minus perspiciatis architecto nulla nisi ad excepturi fugiat? Sapiente rerum earum excepturi ad!</p>
-    <br>
-    <br>
+    <p class="mb-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error excepturi, quidem asperiores nisi at et ducimus esse. Minus perspiciatis architecto nulla nisi ad excepturi fugiat? Sapiente rerum earum excepturi ad!</p>
     <div class="row">
         <div class="col-md-6 col-sm-12 mb-5">
             <h2>Login</h2>
