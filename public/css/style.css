@@ -1,4 +1,7 @@
-#companyRegisterPart1 {
-  width: 800px;
-  margin: 0 auto;
+#createCompanyAccount h1{
+  margin-bottom: 40px;
+}
+
+#createCompanyAccount input{
+  margin-bottom: 20px;
 }
