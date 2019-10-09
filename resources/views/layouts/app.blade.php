@@ -76,5 +76,6 @@
             @yield('content')
         </main>
     </div>
-</body>
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAP_API_KEY') }}&callback=initMap" async defer></script>
+  </body>
 </html>
