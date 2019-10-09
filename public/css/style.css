@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #createCompanyAccount h1{
   margin-bottom: 20px;
 }
@@ -28,4 +29,12 @@
   width: 800px;
   margin: 0 auto;
 >>>>>>> add begin of companies register form
+=======
+#createCompanyAccount h1{
+  margin-bottom: 40px;
+>>>>>>> add google map on form
+}
+
+#createCompanyAccount input{
+  margin-bottom: 20px;
 }
