@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+<<<<<<< HEAD
+=======
+Route::resource('companies', 'CompaniesController')->only(['create', 'store', 'show']);
+
+>>>>>>> considered comapnies as resources
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
