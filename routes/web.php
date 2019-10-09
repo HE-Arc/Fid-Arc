@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 Route::resource('companies', 'CompaniesController')->only(['create', 'store', 'show']);
 
@@ -27,6 +28,9 @@ Route::get('/companies/create', function() {
 });
 
 //Route::resource('companies', 'CompaniesController')->only(['create, store, show']);
+=======
+Route::resource('companies', 'CompaniesController')->only(['create', 'store', 'show']);
+>>>>>>> considered comapnies as resources
 
 >>>>>>> add begin of companies register form
 Auth::routes();

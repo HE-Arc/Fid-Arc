@@ -45,5 +45,8 @@ class CompaniesController extends Controller
       $companyInfos = $userInfos->companyAccount;
       return view('companies.profile', ['userInfos' => $userInfos, 'companyInfos' => $companyInfos]);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> considered comapnies as resources
 }
