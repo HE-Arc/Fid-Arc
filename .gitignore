@@ -2,6 +2,9 @@
 # Created by https://www.gitignore.io/api/laravel,phpstorm
 # Edit at https://www.gitignore.io/?templates=laravel,phpstorm
 
+# Composer
+composer.lock
+
 ### Laravel ###
 /vendor/
 node_modules/
