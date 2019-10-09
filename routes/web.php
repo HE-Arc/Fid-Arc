@@ -15,11 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/companies/create', function() {
-  return view('companies.create');
-});
-
-//Route::resource('companies', 'CompaniesController')->only(['create, store, show']);
+Route::resource('companies', 'CompaniesController')->only(['create', 'store', 'show']);
 
 Auth::routes();
 

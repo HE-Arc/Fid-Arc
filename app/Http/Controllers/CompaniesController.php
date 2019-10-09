@@ -18,6 +18,6 @@ class CompaniesController extends Controller
 
     public function show()
     {
-      return view('home')
+      return view('home');
     }
 }
