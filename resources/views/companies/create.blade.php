@@ -4,22 +4,22 @@
 <div class="container">
   <div id="createCompanyAccount">
     <h1>Create a company account</h1>
-      {{ Form::open(['route' => 'home']) }}
+      {{ Form::open(['url' => 'companies']) }}
       <div id="companyRegisterPart1" >
         {{ Form::label('email', 'E-mail address : ') }}
-        {{ Form::email('email', null, ['class' => 'form-control', 'required' => 'required']) }}
+        {{ Form::email('email', null, ['class' => 'form-control']) }}
 
         {{ Form::label('firstName', 'First name : ') }}
-        {{ Form::text('firstName', null, ['class' => 'form-control', 'required' => 'required']) }}
+        {{ Form::text('firstName', null, ['class' => 'form-control']) }}
 
         {{ Form::label('lastName', 'Last name : ') }}
-        {{ Form::text('lastName', null, ['class' => 'form-control', 'required' => 'required']) }}
+        {{ Form::text('lastName', null, ['class' => 'form-control']) }}
 
         {{ Form::label('password', 'Password : ') }}
-        {{ Form::password('password', ['class' => 'form-control', 'required' => 'required']) }}
+        {{ Form::password('password', ['class' => 'form-control']) }}
 
         {{ Form::label('confirmPassword', 'Confirm password : ') }}
-        {{ Form::password('confirmPassword', ['class' => 'form-control', 'required' => 'required']) }}
+        {{ Form::password('confirmPassword', ['class' => 'form-control']) }}
 
         <button href="#" id="btnNextStep1" class="btn btn-dark btn-block" onclick="toggleCompanyFormPage(1,2,true); return false;">Next Step (1/3)</button>
       </div>

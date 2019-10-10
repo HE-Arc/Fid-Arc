@@ -1,25 +1,32 @@
-
+/**
+ * Toggle company form page and check if all inputs are not empty before to change page
+ * @param  {Integer}  startId          id of start page, this page will be hidden
+ * @param  {Integer}  endId            id of end page, this page will be displayed
+ * @param  {Boolean}  checkField       true, if the field must be not empty, false for no verification
+ * @param  {Boolean} [sendForm=false] true to send form, false otherwise
+ */
 function toggleCompanyFormPage(startId, endId, checkField, sendForm = false){
   let startDiv = document.getElementById('companyRegisterPart' + startId);
   let endDiv = document.getElementById('companyRegisterPart' + endId);
-  let errorMessage;
 
   if(checkField){
     let isFieldOk = true;
 
-
+    //browse all childrens of the subpage
     for(let i = 0; i < startDiv.children.length; i++){
       let input = startDiv.children[i]
 
+      //if the children are inputs or textarea
       if(input.nodeName == 'INPUT' || input.nodeName == 'TEXTAREA'){
-        errorMessage = input.checkValidity()
-        if(!errorMessage){
+        //check if the field is null or not
+        if(input.value == "" || input.value == null){
           isFieldOk = false;
-          errorMessage = input.validationMessage;
-          break;
         }
       }
     }
+
+    //if no fields are empty, display the hide the start page and display the end page
+    //otherwise send a message to the user
     if(isFieldOk){
       startDiv.style.display = 'none'
       endDiv.style.display = 'block'
@@ -27,15 +34,13 @@ function toggleCompanyFormPage(startId, endId, checkField, sendForm = false){
         document.querySelector('#createCompanyAccount form').submit();
       }
     } else {
-      alert(errorMessage)
+      alert('Please input all the fields ! ')
     }
-
-  } else {
+  } else {//if the page change does not require verification, such as a rollback for example
     startDiv.style.display = 'none'
     endDiv.style.display = 'block'
   }
 }
-
 
 let map; //Google maps object
 let marker = null; //marker display on the map

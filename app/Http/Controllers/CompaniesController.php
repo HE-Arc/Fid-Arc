@@ -14,6 +14,7 @@ class CompaniesController extends Controller
       return view('companies.create');
     }
 
+<<<<<<< HEAD
     public function store(CompanyCreateRequest $request)
     {
 <<<<<<< HEAD
@@ -21,6 +22,11 @@ class CompaniesController extends Controller
 =======
       echo 'test';
 >>>>>>> add company register form with page toggler
+=======
+    public function store(Request $request)
+    {
+      var_dump($request->all());
+>>>>>>> update js toggle and check function
     }
 
     public function show()
