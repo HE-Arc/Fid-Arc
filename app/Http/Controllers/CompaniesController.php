@@ -19,6 +19,7 @@ class CompaniesController extends Controller
 
     public function store(CompanyCreateRequest $request)
     {
+<<<<<<< HEAD
       $arrayResult = $request->all();
       $user = User::create([
           'name' => $arrayResult['first_name'],
@@ -37,6 +38,13 @@ class CompaniesController extends Controller
         'user_id' => $user->id
       ]);
       return redirect('/home');
+=======
+<<<<<<< HEAD
+      $request->all();
+=======
+      echo 'test';
+>>>>>>> add company register form with page toggler
+>>>>>>> add company register form with page toggler
     }
 
     public function show($id)

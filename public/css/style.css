@@ -31,10 +31,28 @@
 >>>>>>> add begin of companies register form
 =======
 #createCompanyAccount h1{
+<<<<<<< HEAD
   margin-bottom: 40px;
 >>>>>>> add google map on form
+=======
+  margin-bottom: 20px;
 }
 
-#createCompanyAccount input{
+#createCompanyAccount input, #createCompanyAccount select{
+  margin-bottom: 20px;
+>>>>>>> add company register form with page toggler
+}
+
+#createCompanyAccount textarea{
+  margin-bottom: 20px;
+  height: 70px;
+}
+
+#createCompanyAccount .btn-info{
+  display: block;
+  margin-bottom: 20px;
+}
+
+#map {
   margin-bottom: 20px;
 }
