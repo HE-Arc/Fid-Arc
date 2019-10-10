@@ -13,7 +13,7 @@ class CompaniesController extends Controller
 
     public function store()
     {
-
+      echo 'test';
     }
 
     public function show()

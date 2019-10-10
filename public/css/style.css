@@ -1,7 +1,21 @@
 #createCompanyAccount h1{
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
-#createCompanyAccount input{
+#createCompanyAccount input, #createCompanyAccount select{
+  margin-bottom: 20px;
+}
+
+#createCompanyAccount textarea{
+  margin-bottom: 20px;
+  height: 70px;
+}
+
+#createCompanyAccount .btn-info{
+  display: block;
+  margin-bottom: 20px;
+}
+
+#map {
   margin-bottom: 20px;
 }
