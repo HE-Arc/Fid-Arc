@@ -34,7 +34,9 @@ function toggleCompanyFormPage(startId, endId, checkField, sendForm = false){
         document.querySelector('#createCompanyAccount form').submit();
       }
     } else {
-      alert('Please input all the fields ! ')
+      Swal.fire({type: 'error',
+        title: 'Error...',
+        text: 'Please input all fileds!'})
     }
   } else {//if the page change does not require verification, such as a rollback for example
     startDiv.style.display = 'none'

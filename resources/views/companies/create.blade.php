@@ -55,7 +55,7 @@
         {{ Form::label('messageToUser', 'Write a message tha will be displayed to the user when he has completed all card points : ')}}
         {{ Form::textarea('messageToUser', null, ['class' => 'form-control'])}}
 
-        <button href="#" id="btnNextStep2" class="btn btn-dark btn-block" onclick="toggleCompanyFormPage(3,3,true,true); return false;">Finalize your account (3/3)</button>
+        <button href="#" id="btnNextStep3" class="btn btn-dark btn-block" onclick="toggleCompanyFormPage(3,3,true,true); return false;">Finalize your account (3/3)</button>
       </div>
   {{ Form::close() }}
 </div>
