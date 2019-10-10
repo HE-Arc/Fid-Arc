@@ -20,6 +20,7 @@ class CompaniesController extends Controller
     public function store(CompanyCreateRequest $request)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       $arrayResult = $request->all();
       $user = User::create([
           'name' => $arrayResult['first_name'],
@@ -45,6 +46,9 @@ class CompaniesController extends Controller
       echo 'test';
 >>>>>>> add company register form with page toggler
 >>>>>>> add company register form with page toggler
+=======
+      $request->all();
+>>>>>>> update js toggle and check function
     }
 
     public function show($id)
