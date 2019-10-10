@@ -11,9 +11,9 @@ class CompaniesController extends Controller
       return view('companies.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-      echo 'test';
+      var_dump($request->all());
     }
 
     public function show()
