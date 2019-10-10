@@ -17,10 +17,13 @@
 =======
     <script src="{{ asset('js/main.js') }}" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+<<<<<<< HEAD
 >>>>>>> add sweetalert
 =======
     <script src="{{ asset('js/main.js') }}" defer></script>
 >>>>>>> add begin of companies register form
+=======
+>>>>>>> add sweetalert
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
