@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CompanyCreateRequest;
 use Illuminate\Http\Request;
 
 class CompaniesController extends Controller
@@ -11,9 +12,10 @@ class CompaniesController extends Controller
       return view('companies.create');
     }
 
-    public function store(Request $request)
+    public function store(CompanyCreateRequest $request)
     {
-      var_dump($request->all());
+      $request->all();
+      echo 'test';
     }
 
     public function show()
