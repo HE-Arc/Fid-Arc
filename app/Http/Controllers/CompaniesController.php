@@ -48,7 +48,14 @@ class CompaniesController extends Controller
 >>>>>>> add company register form with page toggler
 =======
       $request->all();
+<<<<<<< HEAD
 >>>>>>> update js toggle and check function
+=======
+<<<<<<< HEAD
+=======
+      echo 'test';
+>>>>>>> create RequestForm validation, update form style when error occure and create function to load marker on map after error on form
+>>>>>>> create RequestForm validation, update form style when error occure and create function to load marker on map after error on form
     }
 
     public function show($id)
