@@ -15,6 +15,7 @@ class CompaniesController extends Controller
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function store(CompanyCreateRequest $request)
     {
 <<<<<<< HEAD
@@ -27,6 +28,12 @@ class CompaniesController extends Controller
     {
       var_dump($request->all());
 >>>>>>> update js toggle and check function
+=======
+    public function store(CompanyCreateRequest $request)
+    {
+      $request->all();
+      echo 'test';
+>>>>>>> create RequestForm validation, update form style when error occure and create function to load marker on map after error on form
     }
 
     public function show()

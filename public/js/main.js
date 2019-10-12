@@ -47,6 +47,7 @@ function toggleCompanyFormPage(startId, endId, checkField, sendForm = false){
 let map; //Google maps object
 let marker = null; //marker display on the map
 
+
 /** Init the Google Maps */
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -55,6 +56,13 @@ function initMap() {
     streetViewControl: false,
     fullscreenControl: false,
   });
+
+  //If there was an error in the form reloads the marker on the map
+  let htmlLatitude = document.getElementsByName('latitude')[0].value;
+  let htmlLongitude = document.getElementsByName('longitude')[0].value;
+  if(htmlLatitude !== "" && htmlLongitude !== ""){
+    placeMarker({lat: parseFloat(htmlLatitude), lng: parseFloat(htmlLongitude)});
+  }
 
   // Add listener on map clic
   google.maps.event.addListener(map, "click", function (event) {
@@ -78,6 +86,7 @@ function initMap() {
  * @param  {Object} location Google Maps object with location
  */
 function placeMarker(location) {
+  console.log(location);
     marker = new google.maps.Marker({
         position: location,
         map: map
