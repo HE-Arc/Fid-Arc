@@ -12,6 +12,16 @@ class User extends Authenticatable
 {
     use HasRoles, HasApiTokens, Notifiable;
 
+    public function companyAccount()
+    {
+      return $this->hasOne("App\Company");
+    }
+
+    public function fidelityCards()
+    {
+      return $this->hasMany("App\Company");
+    }
+
     /**
      * The attributes that are mass assignable.
      *

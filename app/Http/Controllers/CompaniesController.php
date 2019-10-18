@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CompanyCreateRequest;
 use Illuminate\Http\Request;
+use App\User;
+use App\Company;
 
 class CompaniesController extends Controller
 {
@@ -15,11 +17,14 @@ class CompaniesController extends Controller
     public function store(CompanyCreateRequest $request)
     {
       $request->all();
-      echo 'test';
     }
 
     public function show()
     {
       return view('home');
+    }
+
+    private function create(){
+
     }
 }
