@@ -16,7 +16,12 @@ class Company extends Model
       return $this->hasMany("App\User");
     }
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
-        '_token'
+        'company_name', 'company_description', 'latitude', 'longitude', 'number_fidelity_points', 'message_to_user', 'card_color_id', 'user_id'
     ];
 }
