@@ -19,8 +19,6 @@ class CompaniesController extends Controller
 
     public function store(CompanyCreateRequest $request)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
       $arrayResult = $request->all();
       $user = User::create([
           'name' => $arrayResult['first_name'],
@@ -39,23 +37,6 @@ class CompaniesController extends Controller
         'user_id' => $user->id
       ]);
       return redirect('/home');
-=======
-<<<<<<< HEAD
-      $request->all();
-=======
-      echo 'test';
->>>>>>> add company register form with page toggler
->>>>>>> add company register form with page toggler
-=======
-      $request->all();
-<<<<<<< HEAD
->>>>>>> update js toggle and check function
-=======
-<<<<<<< HEAD
-=======
-      echo 'test';
->>>>>>> create RequestForm validation, update form style when error occure and create function to load marker on map after error on form
->>>>>>> create RequestForm validation, update form style when error occure and create function to load marker on map after error on form
     }
 
     public function show($id)
@@ -64,8 +45,4 @@ class CompaniesController extends Controller
       $companyInfos = $userInfos->companyAccount;
       return view('companies.profile', ['userInfos' => $userInfos, 'companyInfos' => $companyInfos]);
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> considered comapnies as resources
 }
