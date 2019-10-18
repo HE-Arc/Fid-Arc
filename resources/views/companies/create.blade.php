@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+<?php
+var_dump($errors->all());
+ ?>
 <div class="container">
   <div id="createCompanyAccount">
     <h1>Create a company account</h1>
@@ -80,7 +83,7 @@
         <button href="#" class="btn btn-info" onclick="toggleCompanyFormPage(3,2,false); return false;">&lt; Return</button>
         <h2>Card customisation</h2>
         {{ Form::label('number_fidelity_points', 'Number of fidelity points : ')}}
-        {{ Form::selectRange('number_fidelity_points', 0, 20,  5, $errors->has('number_fidelity_points') ? ['class'=>'is-invalid form-control'] : ['class' => 'form-control']) }}
+        {{ Form::selectRange('number_fidelity_points', 1, 20,  5, $errors->has('number_fidelity_points') ? ['class'=>'is-invalid form-control'] : ['class' => 'form-control']) }}
         @error('number_fidelity_points')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
@@ -88,7 +91,7 @@
         @enderror
 
         {{ Form::label('card_color', 'Card color : ')}}
-        <select class="form-control @error('name') is-invalid @enderror">
+        <select name="card_color" class="form-control @error('card_color') is-invalid @enderror">
           @foreach($card_colors as $card_color)
           <option value={{$card_color->id}}>{{ucfirst($card_color->color)}}</option>
           @endforeach
