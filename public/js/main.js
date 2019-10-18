@@ -50,8 +50,10 @@ let marker = null; //marker display on the map
 
 /** Init the Google Maps */
 function initMap() {
+  let defaultLocation = {lat: 46.991740, lng: 6.928846};
+
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 46.991740, lng: 6.928846},
+    center: defaultLocation,
     zoom: 10,
     streetViewControl: false,
     fullscreenControl: false,
