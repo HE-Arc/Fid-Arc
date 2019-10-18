@@ -88,12 +88,11 @@
         @enderror
 
         {{ Form::label('card_color', 'Card color : ')}}
-        {{ Form::select('card_color',array('red' => 'Red',
-                                          'blue' => 'Blue',
-                                          'green' => 'Green',
-                                          'yellow' => 'Yellow',
-                                          'black' => 'Black',
-                                          'white' => 'White'), 'red', $errors->has('card_color') ? ['class'=>'is-invalid form-control'] : ['class' => 'form-control']) }}
+        <select class="form-control @error('name') is-invalid @enderror">
+          @foreach($card_colors as $card_color)
+          <option value={{$card_color->id}}>{{ucfirst($card_color->color)}}</option>
+          @endforeach
+        </select>
         @error('card_color')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
