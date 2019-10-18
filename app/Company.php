@@ -17,7 +17,10 @@ class Company extends Model
       return $this->hasMany("App\User");
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> update card colors select list
     /**
      * The attributes that are mass assignable.
      *
