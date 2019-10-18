@@ -15,9 +15,6 @@ class CompaniesController extends Controller
     {
       $card_colors = DB::table('card_colors')->get();
       return view('companies.create', ['card_colors' => $card_colors]);
-      // $card_colors_id = DB::table("card_colors")->pluck("id")->toArray();
-      // echo 'required|in:'.implode($card_colors_id, ',');
-      // echo 'required|in:1,2,3,4,5,6';
     }
 
     public function store(CompanyCreateRequest $request)
