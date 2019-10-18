@@ -1,9 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<?php
-var_dump($errors->all());
- ?>
+
 <div class="container">
   <div id="createCompanyAccount">
     <h1>Create a company account</h1>
