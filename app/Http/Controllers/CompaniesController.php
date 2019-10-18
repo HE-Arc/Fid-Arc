@@ -15,12 +15,16 @@ class CompaniesController extends Controller
     {
       $card_colors = DB::table('card_colors')->get();
       return view('companies.create', ['card_colors' => $card_colors]);
+      // $card_colors_id = DB::table("card_colors")->pluck("id")->toArray();
+      // echo 'required|in:'.implode($card_colors_id, ',');
+      // echo 'required|in:1,2,3,4,5,6';
     }
 
     public function store(CompanyCreateRequest $request)
     {
       $arrayResult = $request->all();
-      $user = User::create([
+      var_dump($request->all());
+      /*$user = User::create([
           'name' => $arrayResult['first_name'],
           'email' => $arrayResult['email'],
           'password' => Hash::make($arrayResult['password']),
@@ -35,7 +39,7 @@ class CompaniesController extends Controller
         'message_to_user' => $arrayResult['message_to_user'],
         'card_color_id' => '...',
         'user_id' => $user->id
-      ]);
+      ]);*/
     }
 
     public function show()
