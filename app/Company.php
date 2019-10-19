@@ -8,6 +8,7 @@ class Company extends Model
 {
     public function userAccount()
     {
+      //return $this->belongsTo("App\User");
       return $this->hasOne("App\User");
     }
 
