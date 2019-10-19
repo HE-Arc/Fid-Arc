@@ -15,9 +15,13 @@ class User extends Authenticatable
     public function companyAccount()
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       //return $this->hasMany("App\Company");
 =======
 >>>>>>> add model relationships
+=======
+      //return $this->hasMany("App\Company");
+>>>>>>> add begin of company profile page
       return $this->hasOne("App\Company");
     }
 
