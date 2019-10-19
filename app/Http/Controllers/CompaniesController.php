@@ -39,9 +39,11 @@ class CompaniesController extends Controller
       return redirect('/home');
     }
 
-    public function show()
+    public function show($id)
     {
-      return view('home');
+      $userInfos = User::findOrFail($id);
+      $companyInfos = $userInfos->companyAccount;
+      return view('companies.profile', ['userInfos' => $userInfos, 'companyInfos' => $companyInfos]);
     }
 
 }

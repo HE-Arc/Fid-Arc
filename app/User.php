@@ -14,6 +14,7 @@ class User extends Authenticatable
 
     public function companyAccount()
     {
+      //return $this->hasMany("App\Company");
       return $this->hasOne("App\Company");
     }
 
