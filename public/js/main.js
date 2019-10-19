@@ -47,27 +47,26 @@ function toggleCompanyFormPage(startId, endId, checkField, sendForm = false){
 let map; //Google maps object
 let marker = null; //marker display on the map
 
-
 /** Init the Google Maps */
 function initMap() {
-  let defaultLocation = {lat: 46.991740, lng: 6.928846};
+  if (navigator.geolocation){
+    navigator.geolocation.getCurrentPosition((pos)=> {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: pos.coords.latitude, lng: pos.coords.longitude},
+        zoom: 10,
+        streetViewControl: false,
+        fullscreenControl: false,
+      });
 
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: defaultLocation,
-    zoom: 10,
-    streetViewControl: false,
-    fullscreenControl: false,
-  });
+    //If there was an error in the form reloads the marker on the map
+    let htmlLatitude = document.getElementsByName('latitude')[0].value;
+    let htmlLongitude = document.getElementsByName('longitude')[0].value;
+    if(htmlLatitude !== "" && htmlLongitude !== ""){
+      placeMarker({lat: parseFloat(htmlLatitude), lng: parseFloat(htmlLongitude)});
+    }
 
-  //If there was an error in the form reloads the marker on the map
-  let htmlLatitude = document.getElementsByName('latitude')[0].value;
-  let htmlLongitude = document.getElementsByName('longitude')[0].value;
-  if(htmlLatitude !== "" && htmlLongitude !== ""){
-    placeMarker({lat: parseFloat(htmlLatitude), lng: parseFloat(htmlLongitude)});
-  }
-
-  // Add listener on map clic
-  google.maps.event.addListener(map, "click", function (event) {
+    // Add listener on map clic
+    google.maps.event.addListener(map, "click", function (event) {
       var latitude = event.latLng.lat();
       var longitude = event.latLng.lng();
 
@@ -80,7 +79,11 @@ function initMap() {
         marker.setMap(null)
       }
       placeMarker(event.latLng);
-  });
+      });
+    });
+  } else {
+  alert("Please active geolocation !");
+  }
 }
 
 /**
@@ -88,7 +91,6 @@ function initMap() {
  * @param  {Object} location Google Maps object with location
  */
 function placeMarker(location) {
-  console.log(location);
     marker = new google.maps.Marker({
         position: location,
         map: map
