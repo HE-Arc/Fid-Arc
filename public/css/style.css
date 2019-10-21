@@ -23,3 +23,11 @@
 #companyProfile h1{
   margin-bottom: 40px;
 }
+
+#companyProfile .card{
+  margin-bottom: 30px;
+}
+
+#companyProfile textarea{
+  margin-bottom: 30px;
+}

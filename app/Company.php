@@ -1,14 +1,10 @@
 <?php
-
 namespace App;
-
 use Illuminate\Database\Eloquent\Model;
-
 class Company extends Model
 {
     public function userAccount()
     {
-      //return $this->belongsTo("App\User");
       return $this->hasOne("App\User");
     }
 
@@ -17,10 +13,6 @@ class Company extends Model
       return $this->hasMany("App\User");
     }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> update card colors select list
     /**
      * The attributes that are mass assignable.
      *
@@ -29,5 +21,4 @@ class Company extends Model
     protected $fillable = [
         'company_name', 'company_description', 'latitude', 'longitude', 'number_fidelity_points', 'message_to_user', 'card_color_id', 'user_id'
     ];
-
 }

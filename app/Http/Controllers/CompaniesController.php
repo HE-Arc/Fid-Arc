@@ -1,14 +1,11 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Http\Requests\CompanyCreateRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\User;
 use App\Company;
 use Illuminate\Support\Facades\DB;
-
 class CompaniesController extends Controller
 {
     public function create()
@@ -20,7 +17,6 @@ class CompaniesController extends Controller
     public function store(CompanyCreateRequest $request)
     {
       $arrayResult = $request->all();
-      var_dump($request->all());
       $user = User::create([
           'name' => $arrayResult['first_name'],
           'email' => $arrayResult['email'],
