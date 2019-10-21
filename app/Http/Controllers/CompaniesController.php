@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Hash;
 use App\User;
 use App\Company;
 use Illuminate\Support\Facades\DB;
+
 class CompaniesController extends Controller
 {
     public function create()
