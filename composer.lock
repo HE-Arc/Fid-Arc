@@ -909,6 +909,7 @@
                 "laravel"
             ],
             "time": "2019-10-08T12:50:06+00:00"
+
         },
         {
             "name": "laravel/passport",
