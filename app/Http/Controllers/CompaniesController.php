@@ -13,7 +13,6 @@ class CompaniesController extends Controller
 {
     public function create()
     {
-
       return view('companies.create', ['card_colors' => CardColor::all()]);
     }
 
@@ -50,6 +49,8 @@ class CompaniesController extends Controller
 
       return view('companies.profile', ['userInfos' => $userInfos, 'companyInfos' => $companyInfos, 'cardColor' => $cardColor]);*/
       $user = User::findOrFail($id);
+      $company = Company::findOrFail($id);
+      $fidelityCards = $user->fidelityCards()->save($company);
       echo '<pre>'; print_r($user); echo '</pre>';
     }
 }
