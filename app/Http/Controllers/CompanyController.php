@@ -9,7 +9,7 @@ use App\CardColor;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 
-class CompaniesController extends Controller
+class CompanyController extends Controller
 {
     public function create()
     {

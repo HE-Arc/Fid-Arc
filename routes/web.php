@@ -12,6 +12,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('companies', 'CompaniesController')->only(['create', 'store', 'show']);
+Route::resource('companies', 'CompanyController')->only(['create', 'store', 'show']);
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

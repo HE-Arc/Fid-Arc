@@ -16,7 +16,7 @@ class User extends Authenticatable
 
     public function fidelityCards()
     {
-      return $this->belongsToMany("App\Company");
+      return $this->belongsToMany("App\Company")->using('App\CompanyUser');
     }
 
     /**
