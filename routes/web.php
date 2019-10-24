@@ -17,4 +17,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware ('auth', 'verified')->group (function () {
+    Route::get('/profile', 'ProfileController@index')->name('profile');
+});
