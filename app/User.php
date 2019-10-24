@@ -40,11 +40,20 @@ class User extends Authenticatable
     ];
 
     protected $appends = [
-        'role_names'
+        'role_names',
+        'company_data'
     ];
 
     public function getRoleNamesAttribute()
     {
         return $this->getRoleNames();
+    }
+
+    public function getCompanyDataAttribute()
+    {
+        if($this->hasRole('company'))
+            return true; //TODO
+        else
+            return false; //TODO
     }
 }
