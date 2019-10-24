@@ -11,7 +11,8 @@
         <div class="card border-secondary">
           <div class="card-header"><strong>Personnal infos</strong></div>
           <div class="card-body">
-            <p class="text-center"><strong>Name : </strong>{{ $userInfos->name }}</p>
+            <p class="text-center"><strong>First name : </strong>{{ $userInfos->name }}</p>
+            <p class="text-center"><strong>Last name : </strong>{{ $userInfos->lastname }}</p>
             <p class="text-center"><strong>Email : </strong>{{ $userInfos->email }}</p>
             <p class="text-center"><strong>Company name : </strong>{{ $companyInfos->company_name }}</p>
             <p class="text-center"><strong>Company description : </strong>{{ $companyInfos->company_description }}</p>
@@ -21,7 +22,7 @@
           <div class="card-header"><strong>Card infos</strong></div>
           <div class="card-body">
             <p class="text-center"><strong>Number of fidelity points : </strong>{{ $companyInfos->number_fidelity_points }}</p>
-            <p class="text-center"><strong>Card color : </strong>{{ $companyInfos->card_color_id }}</p>
+            <p class="text-center"><strong>Card color : </strong>{{ $cardColor }}</p>
             <p class="text-center"><strong>Message to user : </strong>{{ $companyInfos->message_to_user }}</p>
           </div>
         </div>

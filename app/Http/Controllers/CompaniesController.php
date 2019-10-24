@@ -5,14 +5,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\User;
 use App\Company;
+use App\CardColor;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Model;
 
 class CompaniesController extends Controller
 {
     public function create()
     {
-      $card_colors = DB::table('card_colors')->get();
-      return view('companies.create', ['card_colors' => $card_colors]);
+
+      return view('companies.create', ['card_colors' => CardColor::all()]);
     }
 
     public function store(CompanyCreateRequest $request)
@@ -20,9 +22,12 @@ class CompaniesController extends Controller
       $arrayResult = $request->all();
       $user = User::create([
           'name' => $arrayResult['first_name'],
+          'lastname' => $arrayResult['last_name'],
           'email' => $arrayResult['email'],
           'password' => Hash::make($arrayResult['password']),
       ]);
+
+      $user->assignRole('company');
 
       $company = Company::create([
         'company_name' => $arrayResult['company_name'],
@@ -39,8 +44,12 @@ class CompaniesController extends Controller
 
     public function show($id)
     {
-      $userInfos = User::findOrFail($id);
+      /*$userInfos = User::findOrFail($id);
       $companyInfos = $userInfos->companyAccount;
-      return view('companies.profile', ['userInfos' => $userInfos, 'companyInfos' => $companyInfos]);
+      $cardColor = CardColor::findOrFail($companyInfos['card_color_id'])['color'];
+
+      return view('companies.profile', ['userInfos' => $userInfos, 'companyInfos' => $companyInfos, 'cardColor' => $cardColor]);*/
+      $user = User::findOrFail($id);
+      echo '<pre>'; print_r($user); echo '</pre>';
     }
 }

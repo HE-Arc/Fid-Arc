@@ -10,7 +10,7 @@ class Company extends Model
 
     public function suscribedUser()
     {
-      return $this->hasMany("App\User");
+      return $this->belongsToMany("App\User");
     }
 
     /**
