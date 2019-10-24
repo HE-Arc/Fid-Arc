@@ -27,7 +27,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', 'roles'
     ];
 
     /**
@@ -38,4 +38,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    protected $appends = [
+        'role_names'
+    ];
+
+    public function getRoleNamesAttribute()
+    {
+        return $this->getRoleNames();
+    }
 }
