@@ -12,6 +12,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/addPoint/{idUser}/{idCompany}/{isSubscribedToEmails?}', 'CompanyUserController@addFidelityCardPoint')->name('addPoint');
+
 Route::resource('companies', 'CompanyController')->only(['create', 'store', 'show']);
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

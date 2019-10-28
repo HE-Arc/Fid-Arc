@@ -6,17 +6,17 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
 
 class CompanyUser extends Pivot
 {
-    public function addFidelityCardPoint($idUser, $idCompany, $isSubscribedToEmails)
+    public static function addFidelityCardPoint($idUser, $idCompany, $isSubscribedToEmails)
     {
-      /*$error = '';
+      $error = '';
       $company = Company::findOrFail($idCompany);
-      $user = User::findOrFail($user);
+      $user = User::findOrFail($idUser);
 
       if($idUser != $company->user_id)
       {
-        if($user->HasRoles(''))
+        if($user->HasRoles('company'))
         {
-          $user->fidelityCards()->save($company);
+          $this->user_id = $idUser;
 
         }
         else
@@ -29,5 +29,7 @@ class CompanyUser extends Pivot
       {
         $error = 'The user and the company are the same !';
       }
-    }*/
+      echo $error;
+    }
+
 }
