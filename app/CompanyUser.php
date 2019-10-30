@@ -6,30 +6,17 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
 
 class CompanyUser extends Pivot
 {
-    public static function addFidelityCardPoint($idUser, $idCompany, $isSubscribedToEmails)
+    public static function isInsertionLegal($user, $company)
     {
-      $error = '';
-      $company = Company::findOrFail($idCompany);
-      $user = User::findOrFail($idUser);
+      $isError = true;
 
-      if($idUser != $company->user_id)
+      if($user->id != $company->user_id)
       {
-        if($user->HasRoles('company'))
+        if($user->hasRole('client'))
         {
-          $this->user_id = $idUser;
-
+          $isError = false;
         }
-        else
-        {
-          $error = 'Only user can create card !';
-        }
-
       }
-      else
-      {
-        $error = 'The user and the company are the same !';
-      }
-      echo $error;
+      return $isError;
     }
-
 }
