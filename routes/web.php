@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,11 +9,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::get('/addPoint/{idUser}/{idCompany}/{isSubscribedToEmails?}', 'CompanyUserController@addFidelityCardPoint')->name('addPoint');
 
+Route::resource('companies', 'CompanyController')->only(['create', 'store', 'show']);
+Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

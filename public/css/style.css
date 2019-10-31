@@ -1,0 +1,33 @@
+#createCompanyAccount h1{
+  margin-bottom: 20px;
+}
+
+#createCompanyAccount input, #createCompanyAccount select{
+  margin-bottom: 20px;
+}
+
+#createCompanyAccount textarea{
+  margin-bottom: 20px;
+  height: 70px;
+}
+
+#createCompanyAccount .btn-info{
+  display: block;
+  margin-bottom: 20px;
+}
+
+#createCompanyAccount #map {
+  margin-bottom: 20px;
+}
+
+#companyProfile h1{
+  margin-bottom: 40px;
+}
+
+#companyProfile .card{
+  margin-bottom: 30px;
+}
+
+#companyProfile textarea{
+  margin-bottom: 30px;
+}
