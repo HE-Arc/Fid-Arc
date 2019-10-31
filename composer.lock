@@ -1233,13 +1233,13 @@
                 "shasum": ""
             },
             "require": {
-                "ext-fileinfo": "*",
                 "php": ">=5.5.9"
             },
             "conflict": {
                 "league/flysystem-sftp": "<1.0.6"
             },
             "require-dev": {
+                "ext-fileinfo": "*",
                 "phpspec/phpspec": "^3.4",
                 "phpunit/phpunit": "^5.7.10"
             },
@@ -5260,18 +5260,18 @@
             "authors": [
                 {
                     "name": "Geert Bergman",
-                    "homepage": "http://www.scrivo.org/",
-                    "role": "Project Author"
+                    "role": "Project Author",
+                    "homepage": "http://www.scrivo.org/"
                 },
                 {
                     "name": "Vladimir Jimenez",
-                    "homepage": "https://allejo.io",
-                    "role": "Contributor"
+                    "role": "Contributor",
+                    "homepage": "https://allejo.io"
                 },
                 {
                     "name": "Martin Folkers",
-                    "homepage": "https://twobrain.io",
-                    "role": "Contributor"
+                    "role": "Contributor",
+                    "homepage": "https://twobrain.io"
                 }
             ],
             "description": "Server side syntax highlighter that supports 185 languages. It's a PHP port of highlight.js",
