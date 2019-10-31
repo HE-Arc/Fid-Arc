@@ -43,14 +43,13 @@ class CompanyController extends Controller
 
     public function show($id)
     {
-      /*$userInfos = User::findOrFail($id);
-      $companyInfos = $userInfos->companyAccount;
-      $cardColor = CardColor::findOrFail($companyInfos['card_color_id'])['color'];
-
-      return view('companies.profile', ['userInfos' => $userInfos, 'companyInfos' => $companyInfos, 'cardColor' => $cardColor]);*/
       $user = User::findOrFail($id);
-      $company = Company::findOrFail($id);
-      $fidelityCards = $user->fidelityCards()->save($company);
-      echo '<pre>'; print_r($user); echo '</pre>';
+      if($user->hasRole('company'))
+      {
+        $companyInfos = $user->companyAccount;
+        $cardColor = CardColor::findOrFail($companyInfos['card_color_id'])['color'];
+
+        return view('companies.profile', ['userInfos' => $user, 'companyInfos' => $companyInfos, 'cardColor' => $cardColor]);
+      }
     }
 }

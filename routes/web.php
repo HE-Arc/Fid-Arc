@@ -9,6 +9,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Resources\UserCollection;
+use App\User;
+
 Route::get('/', function () {
     return view('welcome');
 });
