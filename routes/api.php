@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Http\Resources\CompanyCollection;
+use App\Company;
+use App\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +18,14 @@ use Illuminate\Http\Request;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::get('getCompaniesInfos', function(){
+  return new CompanyCollection(Company::all());
+});
+
+Route::get('getFidelityCards/{user_id}', function(Request $request){
+  //print_r($request->query());
+  $user = User::findOrFail(10);
+  return $user->fidelityCards()->get();
 });
