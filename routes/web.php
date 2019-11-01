@@ -18,6 +18,6 @@ Route::get('/', function () {
 
 Route::get('/addPoint/{idUser}/{idCompany}/{isSubscribedToEmails?}', 'CompanyUserController@addFidelityCardPoint')->name('addPoint');
 
-Route::resource('companies', 'CompanyController')->only(['create', 'store', 'show']);
+Route::resource('companies', 'CompanyController')->only(['create', 'store', 'show', 'index']);
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

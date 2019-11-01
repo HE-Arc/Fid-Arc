@@ -18,6 +18,13 @@ class Company extends Model
       return $this->belongsTo('App\CardColor');
     }
 
+    public function getColorAttribute()
+    {
+      return $this->cardColor->color;
+    }
+
+    protected $appends = ['color'];
+
     /**
      * The attributes that should be hidden for arrays.
      *
