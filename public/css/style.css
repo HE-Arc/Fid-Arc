@@ -20,6 +20,10 @@
   margin-bottom: 20px;
 }
 
+#createCompanyAccount button{
+  margin-bottom: 30px;
+}
+
 #companyProfile h1{
   margin-bottom: 40px;
 }
@@ -30,4 +34,12 @@
 
 #companyProfile textarea{
   margin-bottom: 30px;
+}
+
+#ourPartners #mapPartners{
+  margin-bottom: 30px;
+}
+
+#ourPartners .card{
+  width: 50%;
 }

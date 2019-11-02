@@ -27,4 +27,6 @@ class CompanyUser extends Pivot
     }
     return $isError;
   }
+
+  protected $hidden = ['user_id', 'company_id'];
 }

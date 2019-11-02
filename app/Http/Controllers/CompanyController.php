@@ -13,9 +13,8 @@ class CompanyController extends Controller
 {
   public function index()
   {
-    $companies = Company::all();
-    var_dump($companies);
-    return view('companies.index', ['companies' => compact($companies)]);
+    $lastCompanies = Company::orderBy('created_at','desc')->take(3)->get();
+    return view('companies.index', ['lastCompanies' => $lastCompanies]);
   }
 
   public function create()
@@ -50,14 +49,13 @@ class CompanyController extends Controller
 
   public function show($id)
   {
-    /*$userInfos = User::findOrFail($id);
-    $companyInfos = $userInfos->companyAccount;
-    $cardColor = CardColor::findOrFail($companyInfos['card_color_id'])['color'];
-
-    return view('companies.profile', ['userInfos' => $userInfos, 'companyInfos' => $companyInfos, 'cardColor' => $cardColor]);*/
     $user = User::findOrFail($id);
-    $company = Company::findOrFail($id);
-    $fidelityCards = $user->fidelityCards()->save($company);
-    echo '<pre>'; print_r($user); echo '</pre>';
+    if($user->hasRole('company'))
+    {
+      $companyInfos = $user->companyAccount;
+      $cardColor = CardColor::findOrFail($companyInfos['card_color_id'])['color'];
+
+      return view('companies.profile', ['userInfos' => $user, 'companyInfos' => $companyInfos, 'cardColor' => $cardColor]);
+    }
   }
 }

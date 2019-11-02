@@ -1,5 +1,3 @@
-var companies = {{json_encode($companies)}};
-    console.log(companies);
 
 
 /**
@@ -67,6 +65,38 @@ function initMap() {
           streetViewControl: false,
           fullscreenControl: false,
         });
+
+        fetch('http://127.0.0.1/Fid-Arc/public/api/getCompaniesInfos')
+          .then(
+            function(response) {
+              if (response.status !== 200) {
+                console.log('Looks like there was a problem. Status Code: ' + response.status);
+                return;
+              }
+
+              response.json().then(function(data) {
+                for(i in data.data){
+                  let markerPartner = new google.maps.Marker({
+                      position: new google.maps.LatLng(data.data[i].latitude, data.data[i].longitude),
+                      title: data.data[i].company_name,
+                      animation: google.maps.Animation.DROP,
+                      map:mapPartners
+                    });
+
+                    let infoWindow = new google.maps.InfoWindow({
+                        content: '<h2>' + data.data[i].company_name + '</h2>' +'<p><strong>Company description : </strong>'+data.data[i].company_description+'</p>'
+                      });
+
+                    google.maps.event.addListener(markerPartner , 'click', function () {
+                      infoWindow.open(mapPartners, markerPartner );
+                    });
+                }
+              });
+            }
+          )
+          .catch(function(err) {
+            console.log('Fetch Error :-S', err);
+          });
       }
 
       if(mapCompanyRegisterElem){
