@@ -38,13 +38,13 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                       <li class="nav-item active">
-                        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{ url('/home') }}">Home<span class="sr-only">(current)</span></a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Our partners</a>
+                        <a class="nav-link" href="{{ url('companies') }}">Our partners</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Create company account</a>
+                        <a class="nav-link" href="{{ url('companies/create') }}">Create company account</a>
                       </li>
                     </ul>
 
