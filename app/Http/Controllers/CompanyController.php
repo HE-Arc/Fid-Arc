@@ -8,6 +8,7 @@ use App\Company;
 use App\CardColor;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
+use Auth;
 
 class CompanyController extends Controller
 {
@@ -44,12 +45,9 @@ class CompanyController extends Controller
     public function show($id)
     {
       $user = User::findOrFail($id);
-      if($user->hasRole('company'))
-      {
-        $companyInfos = $user->companyAccount;
-        $cardColor = CardColor::findOrFail($companyInfos['card_color_id'])['color'];
+      $companyInfos = $user->companyAccount;
+      $cardColor = CardColor::findOrFail($companyInfos['card_color_id'])['color'];
 
-        return view('companies.profile', ['userInfos' => $user, 'companyInfos' => $companyInfos, 'cardColor' => $cardColor]);
-      }
+      return view('companies.profile', ['userInfos' => $user, 'companyInfos' => $companyInfos, 'cardColor' => $cardColor]);
     }
 }
