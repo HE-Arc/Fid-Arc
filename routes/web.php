@@ -16,7 +16,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/addPoint/{user_id}/{company_id}/{is_subscribed_to_emails?}', 'CompanyUserController@addFidelityCardPoint')->name('addPoint');
+Route::get('test', 'CompanyUserController@test')->name('test');
 
 Route::middleware ('auth', 'verified')->group (function () {
   Route::get('/profile', 'ProfileController@index')->name('profile');

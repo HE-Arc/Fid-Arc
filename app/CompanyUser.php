@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
 
 class CompanyUser extends Pivot
 {
+
   /**
    * Check if add point process is legal.
    * Legal mean : 1. the user and the company are not the same
@@ -20,10 +21,10 @@ class CompanyUser extends Pivot
 
     if($user->id != $company->user_id)
     {
-      if($user->hasRole('client'))
-      {
+      //if($user->hasRole('client'))
+      //{
         $isError = false;
-      }
+      //}
     }
     return $isError;
   }
