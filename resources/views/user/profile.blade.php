@@ -24,6 +24,7 @@
             <h1>Your fidelity cards</h1>
             <hr>
 
+            <div class="loader" id="loader-fidelitycards"></div>
             <div id="fidelitycards"></div>
         </div>
     </div>

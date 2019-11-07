@@ -15,6 +15,7 @@ fetch('http://127.0.0.1:8000/public/api/fidelityCards/9').then(
             html += "</div>"
             html += "</div>"
 
+            document.getElementById("loader-fidelitycards").style.display = "none"; 
             document.getElementById("fidelitycards").innerHTML += html
             });
         });
