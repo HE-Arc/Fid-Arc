@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\CompanyUser;
 use App\Company;
 use App\User;
+use App\Http\Resources\CompanyUser as CompanyUserResource;
 
 class CompanyUserController extends Controller
 {
@@ -41,5 +42,10 @@ class CompanyUserController extends Controller
           $companyUser->save();
         }
       }
+    }
+
+    public function getFidelityCards($id)
+    {
+      return CompanyUserResource::collection(CompanyUser::where('user_id', $id)->get());
     }
 }

@@ -20,6 +20,10 @@
   margin-bottom: 20px;
 }
 
+#createCompanyAccount button{
+  margin-bottom: 30px;
+}
+
 #companyProfile h1{
   margin-bottom: 40px;
 }
@@ -30,4 +34,27 @@
 
 #companyProfile textarea{
   margin-bottom: 30px;
+}
+
+.color_card_1 {
+  background-color: #d63031;
+  color: #ffffff;
+}
+.color_card_2 {
+  background-color: #0984e3;
+  color: #ffffff;
+}
+.color_card_3 {
+  background-color: #00b894;
+  color: #ffffff;
+}
+.color_card_4 {
+  background-color: #fdcb6e;
+}
+.color_card_5 {
+  background-color: #2d3436;
+  color: #ffffff;
+}
+.color_card_6 {
+  background-color: #ffffff;
 }

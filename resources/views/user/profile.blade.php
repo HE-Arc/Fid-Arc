@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@push('head')
+<script src="{{ asset('js/getPersonnalInfosViaApi.js') }}" defer></script>
+@endpush
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -19,21 +23,8 @@
         <div class="col-lg-9 col-md-7 col-sm-12 mb-3">
             <h1>Your fidelity cards</h1>
             <hr>
-            <div class="card mb-3" style="background-color:#00b894;">
-                <div class="card-body">
-                    <h3 class="card-title mb-0">HE-Arc Restaurant</h3>
-                    <p><strong>Come to eat our daily specialities.</strong></p>
-                    <p class="mb-0">Your fidelity points is <strong>8/10</strong></p>
-                </div>
-            </div>
 
-            <div class="card" style="background-color:#74b9ff;">
-                <div class="card-body">
-                    <h3 class="card-title mb-0">KingFood Restaurant</h3>
-                    <p><strong>Do not hesitate to try our new Kebab Burger !</strong></p>
-                    <p class="mb-0">Your fidelity points is <strong>3/10</strong></p>
-                </div>
-            </div>
+            <div id="fidelitycards"></div>
         </div>
     </div>
 </div>

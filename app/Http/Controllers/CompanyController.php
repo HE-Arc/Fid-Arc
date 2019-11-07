@@ -11,46 +11,50 @@ use Illuminate\Database\Eloquent\Model;
 
 class CompanyController extends Controller
 {
-    public function create()
+  public function index(Request $request)
+  {
+
+  }
+
+  public function create()
+  {
+    return view('companies.create', ['card_colors' => CardColor::all()]);
+  }
+
+  public function store(CompanyCreateRequest $request)
+  {
+    $arrayResult = $request->all();
+    $user = User::create([
+        'name' => $arrayResult['first_name'],
+        'lastname' => $arrayResult['last_name'],
+        'email' => $arrayResult['email'],
+        'password' => Hash::make($arrayResult['password']),
+    ]);
+
+    $user->assignRole('company');
+
+    $company = Company::create([
+      'company_name' => $arrayResult['company_name'],
+      'company_description' => $arrayResult['company_description'],
+      'latitude' => $arrayResult['latitude'],
+      'longitude' => $arrayResult['longitude'],
+      'number_fidelity_points' => $arrayResult['number_fidelity_points'],
+      'message_to_user' => $arrayResult['message_to_user'],
+      'card_color_id' => $arrayResult['card_color'],
+      'user_id' => $user->id
+    ]);
+    return redirect('/home');
+  }
+
+  public function show($id)
+  {
+    $user = User::findOrFail($id);
+    if($user->hasRole('company'))
     {
-      return view('companies.create', ['card_colors' => CardColor::all()]);
-    }
-
-    public function store(CompanyCreateRequest $request)
-    {
-      $arrayResult = $request->all();
-      $user = User::create([
-          'name' => $arrayResult['first_name'],
-          'lastname' => $arrayResult['last_name'],
-          'email' => $arrayResult['email'],
-          'password' => Hash::make($arrayResult['password']),
-      ]);
-
-      $user->assignRole('company');
-
-      $company = Company::create([
-        'company_name' => $arrayResult['company_name'],
-        'company_description' => $arrayResult['company_description'],
-        'latitude' => $arrayResult['latitude'],
-        'longitude' => $arrayResult['longitude'],
-        'number_fidelity_points' => $arrayResult['number_fidelity_points'],
-        'message_to_user' => $arrayResult['message_to_user'],
-        'card_color_id' => $arrayResult['card_color'],
-        'user_id' => $user->id
-      ]);
-      return redirect('/home');
-    }
-
-    public function show($id)
-    {
-      /*$userInfos = User::findOrFail($id);
-      $companyInfos = $userInfos->companyAccount;
+      $companyInfos = $user->companyAccount;
       $cardColor = CardColor::findOrFail($companyInfos['card_color_id'])['color'];
 
-      return view('companies.profile', ['userInfos' => $userInfos, 'companyInfos' => $companyInfos, 'cardColor' => $cardColor]);*/
-      $user = User::findOrFail($id);
-      $company = Company::findOrFail($id);
-      $fidelityCards = $user->fidelityCards()->save($company);
-      echo '<pre>'; print_r($user); echo '</pre>';
+      return view('companies.profile', ['userInfos' => $user, 'companyInfos' => $companyInfos, 'cardColor' => $cardColor]);
     }
+  }
 }

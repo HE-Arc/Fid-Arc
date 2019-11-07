@@ -18,7 +18,7 @@ class User extends Authenticatable
 
     public function fidelityCards()
     {
-      return $this->belongsToMany("App\Company")->using('App\CompanyUser');
+      return $this->belongsToMany("App\Company")->using('App\CompanyUser')->withPivot('number_of_points');
     }
 
     /**

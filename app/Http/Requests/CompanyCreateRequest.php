@@ -13,7 +13,7 @@ class CompanyCreateRequest extends FormRequest
     {
         return true;
     }
-    
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -23,7 +23,7 @@ class CompanyCreateRequest extends FormRequest
     {
       $card_colors_id = DB::table("card_colors")->pluck("id")->toArray();
         return [
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users',
             'first_name' => 'required|min:3|max:40|alpha',
             'last_name' => 'required|min:3|max:40|alpha',
             'password' => 'required|confirmed|min:6',
