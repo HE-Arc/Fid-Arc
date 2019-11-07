@@ -18,5 +18,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::middleware ('auth', 'verified')->group (function () {
-    Route::get('/profile', 'ProfileController@index')->name('profile');
+    Route::get('/profile', 'UserController@profile')->name('profile');
 });
