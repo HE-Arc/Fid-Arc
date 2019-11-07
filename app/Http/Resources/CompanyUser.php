@@ -21,7 +21,7 @@ class CompanyUser extends JsonResource
         return [
           'company_name' => $company->company_name,
           'message_to_user' => $company->message_to_user,
-          'total_number_of points' => $company->number_fidelity_points,
+          'total_number_of_points' => $company->number_fidelity_points,
           'current_number_of_points' => $this->number_of_points,
           'card_color_id' => CardColor::find($company->card_color_id)->id
       ];
