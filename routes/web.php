@@ -26,3 +26,4 @@ Route::resource('companies', 'CompanyController')->only(['create', 'store', 'sho
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/fidelityCards', 'CompanyUserController@getFidelityCards')->name('fidelityCards');
