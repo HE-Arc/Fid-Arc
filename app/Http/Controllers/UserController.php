@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\User;
+use App\CardColor;
 
 class UserController extends Controller
 {
@@ -18,6 +20,8 @@ class UserController extends Controller
      */
     public function profile()
     {
-        return view('user.profile', ['user' => Auth::user()]);
+        $user = Auth::user();
+
+        return view('user.profile', ['user' => $user]);
     }
 }
