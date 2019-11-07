@@ -19,8 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('getCompaniesInfos', function(){
+Route::get('companies', function(){
   return CompanyResource::collection(Company::all());
 });
 
-Route::get('getFidelityCards/{user_id}', 'UserController@getFidelityCards')->name('getFidelityCards');
+Route::get('fidelityCards/{user_id}', 'CompanyUserController@getFidelityCards')->name('fidelityCards');

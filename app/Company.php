@@ -17,20 +17,12 @@ class Company extends Model
     {
       return $this->belongsTo('App\CardColor');
     }
-
-    public function getColorAttribute()
-    {
-      return $this->cardColor->color;
-    }
-
-    protected $appends = ['color'];
-
     /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
      */
-    protected $hidden = ['created_at', 'updated_at', 'card_color_id', 'user_id'];
+    protected $hidden = ['id', 'created_at', 'updated_at', 'card_color_id', 'user_id', 'number_fidelity_points'];
 
     /**
      * The attributes that are mass assignable.
