@@ -5,9 +5,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Auth\Passwords\CanResetPassword;
+
 class User extends Authenticatable
 {
-    use HasRoles, HasApiTokens, Notifiable;
+    use HasRoles, HasApiTokens, CanResetPassword, Notifiable;
 
     public function companyAccount()
     {
@@ -16,7 +18,7 @@ class User extends Authenticatable
 
     public function fidelityCards()
     {
-      return $this->belongsToMany("App\Company")->using('App\CompanyUser');
+      return $this->belongsToMany("App\Company")->using('App\CompanyUser')->withPivot('number_of_points');
     }
 
     /**

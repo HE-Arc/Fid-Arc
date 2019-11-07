@@ -35,3 +35,40 @@
 #companyProfile textarea{
   margin-bottom: 30px;
 }
+
+.color_card_1 {
+  background-color: #d63031;
+  color: #ffffff;
+}
+.color_card_2 {
+  background-color: #0984e3;
+  color: #ffffff;
+}
+.color_card_3 {
+  background-color: #00b894;
+  color: #ffffff;
+}
+.color_card_4 {
+  background-color: #fdcb6e;
+}
+.color_card_5 {
+  background-color: #2d3436;
+  color: #ffffff;
+}
+.color_card_6 {
+  background-color: #ffffff;
+}
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #343A40; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

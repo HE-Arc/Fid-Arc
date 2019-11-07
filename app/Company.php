@@ -13,6 +13,17 @@ class Company extends Model
       return $this->belongsToMany("App\User")->using('App\CompanyUser');
     }
 
+    public function cardColor()
+    {
+      return $this->belongsTo('App\CardColor');
+    }
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = ['id', 'created_at', 'updated_at', 'card_color_id', 'user_id', 'number_fidelity_points'];
+
     /**
      * The attributes that are mass assignable.
      *
