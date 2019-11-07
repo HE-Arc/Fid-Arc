@@ -1,4 +1,4 @@
-fetch('http://127.0.0.1:8000/public/api/fidelityCards/9').then(
+fetch('/fidelityCards').then(
     function(response) {
         if (response.status !== 200) {
             console.log('Looks like there was a problem. Status Code: ' + response.status)
