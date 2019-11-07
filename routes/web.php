@@ -19,11 +19,12 @@ Route::get('/', function () {
 Route::get('/addPoint/{user_id}/{company_id}/{is_subscribed_to_emails?}', 'CompanyUserController@addFidelityCardPoint')->name('addPoint');
 
 Route::middleware ('auth', 'verified')->group (function () {
-    Route::get('/profile', 'UserController@profile')->name('profile');
+  Route::get('/profile', 'ProfileController@index')->name('profile');
+  Route::get('/userProfile', 'UserController@profile')->name('userProfile');
+  Route::get('/companyProfile', 'CompanyController@profile')->name('companyProfile');
 });
 
 Route::resource('companies', 'CompanyController')->only(['create', 'store', 'show', 'index']);
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/fidelityCards', 'CompanyUserController@getFidelityCards')->name('fidelityCards');

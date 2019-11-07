@@ -12,6 +12,7 @@ use Auth;
 
 class CompanyController extends Controller
 {
+
   public function index(Request $request)
   {
 
@@ -47,19 +48,11 @@ class CompanyController extends Controller
     return redirect('/home');
   }
 
-  public function show($id)
+  public function profile()
   {
-    $user = User::findOrFail($id);
-    if($user->hasRole('company'))
-    {
-<<<<<<< HEAD
-      $user = User::findOrFail($id);
-=======
->>>>>>> develop
-      $companyInfos = $user->companyAccount;
-      $cardColor = CardColor::findOrFail($companyInfos['card_color_id'])['color'];
-
-      return view('companies.profile', ['userInfos' => $user, 'companyInfos' => $companyInfos, 'cardColor' => $cardColor]);
-    }
+    $user = auth()->user();
+    $companyInfos = $user->companyAccount;
+    $cardColor = CardColor::findOrFail($companyInfos['card_color_id'])['color'];
+    return view('companies.profile', ['userInfos' => $user, 'companyInfos' => $companyInfos, 'cardColor' => $cardColor]);
   }
 }
