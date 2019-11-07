@@ -23,4 +23,4 @@ Route::get('companies', function(){
   return CompanyResource::collection(Company::all());
 });
 
-Route::get('fidelityCards/{user_id}', 'CompanyUserController@getFidelityCards')->name('fidelityCards');
+Route::middleware('auth:api')->get('/fidelityCards', 'CompanyUserController@getFidelityCards')->name('fidelityCards');

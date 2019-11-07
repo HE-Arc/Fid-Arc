@@ -21,3 +21,4 @@ Route::get('/addPoint/{user_id}/{company_id}/{is_subscribed_to_emails?}', 'Compa
 Route::resource('companies', 'CompanyController')->only(['create', 'store', 'show', 'index']);
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/fidelityCards', 'CompanyUserController@getFidelityCards')->name('fidelityCards');
