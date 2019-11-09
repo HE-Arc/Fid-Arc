@@ -45,7 +45,7 @@ class CompanyController extends Controller
       'card_color_id' => $arrayResult['card_color'],
       'user_id' => $user->id
     ]);
-    return redirect('/home');
+    return redirect('/profile');
   }
 
   public function profile()

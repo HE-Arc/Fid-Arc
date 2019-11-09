@@ -46,7 +46,7 @@
                         <a class="nav-link" href="#">Our partners</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Create company account</a>
+                        <a class="nav-link" href="{{ url('/companies/create') }}">Create company account</a>
                       </li>
                     </ul>
 
