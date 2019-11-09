@@ -21,10 +21,10 @@ class CompanyUser extends Pivot
 
     if($user->id != $company->user_id)
     {
-      //if($user->hasRole('client'))
-      //{
+      if($user->hasRole('client'))
+      {
         $isError = false;
-      //}
+      }
     }
     return $isError;
   }

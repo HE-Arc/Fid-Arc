@@ -12,10 +12,10 @@ use Auth;
 
 class CompanyController extends Controller
 {
-
-  public function index(Request $request)
+  public function index()
   {
-
+    $lastCompanies = Company::orderBy('created_at','desc')->take(3)->get();
+    return view('companies.index', ['lastCompanies' => $lastCompanies]);
   }
 
   public function create()

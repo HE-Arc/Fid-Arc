@@ -43,10 +43,10 @@
                         <a class="nav-link" href="{{ url('/') }}">Home<span class="sr-only">(current)</span></a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Our partners</a>
+                        <a class="nav-link" href="{{ url('companies') }}">Our partners</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/companies/create') }}">Create company account</a>
+                        <a class="nav-link" href="{{ url('companies/create') }}">Create company account</a>
                       </li>
                     </ul>
 
