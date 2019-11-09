@@ -27,4 +27,4 @@ Route::middleware ('auth', 'verified')->group (function () {
 Route::resource('companies', 'CompanyController')->only(['create', 'store', 'show', 'index']);
 Auth::routes();
 
-Route::get('/fidelityCards', 'CompanyUserController@getFidelityCards')->name('fidelityCards');
+Route::get('/fidelityCards/{id}', 'CompanyUserController@getFidelityCards')->name('fidelityCards');

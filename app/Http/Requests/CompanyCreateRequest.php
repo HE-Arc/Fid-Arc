@@ -27,7 +27,7 @@ class CompanyCreateRequest extends FormRequest
             'first_name' => 'required|min:3|max:40|alpha',
             'last_name' => 'required|min:3|max:40|alpha',
             'password' => 'required|confirmed|min:6',
-            'company_name' => 'required|min:3|max:40|alpha',
+            'company_name' => 'required|min:3|max:40',
             'company_description' => 'required|min:5|',
             'latitude' => 'required|numeric',
             'longitude' => 'required|numeric',

@@ -47,8 +47,8 @@ class CompanyUserController extends Controller
     }
   }
 
-    public function getFidelityCards()
+    public function getFidelityCards($id)
     {
-        return CompanyUserResource::collection(CompanyUser::where('user_id', auth()->user()->id)->get());
+        return CompanyUserResource::collection(CompanyUser::where('user_id', $id)->get());
     }
 }
