@@ -8,12 +8,14 @@ use App\Company;
 use App\CardColor;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
+use Auth;
 
 class CompanyController extends Controller
 {
-  public function index(Request $request)
+  public function index()
   {
-
+    $lastCompanies = Company::orderBy('created_at','desc')->take(3)->get();
+    return view('companies.index', ['lastCompanies' => $lastCompanies]);
   }
 
   public function create()
@@ -43,18 +45,14 @@ class CompanyController extends Controller
       'card_color_id' => $arrayResult['card_color'],
       'user_id' => $user->id
     ]);
-    return redirect('/home');
+    return redirect('/profile');
   }
 
-  public function show($id)
+  public function profile()
   {
-    $user = User::findOrFail($id);
-    if($user->hasRole('company'))
-    {
-      $companyInfos = $user->companyAccount;
-      $cardColor = CardColor::findOrFail($companyInfos['card_color_id'])['color'];
-
-      return view('companies.profile', ['userInfos' => $user, 'companyInfos' => $companyInfos, 'cardColor' => $cardColor]);
-    }
+    $user = auth()->user();
+    $companyInfos = $user->companyAccount;
+    $cardColor = CardColor::findOrFail($companyInfos['card_color_id'])['color'];
+    return view('companies.profile', ['userInfos' => $user, 'companyInfos' => $companyInfos, 'cardColor' => $cardColor]);
   }
 }

@@ -1,3 +1,5 @@
+
+
 /**
  * Toggle company form page and check if all inputs are not empty before to change page
  * @param  {Integer}  startId          id of start page, this page will be hidden
@@ -44,42 +46,91 @@ function toggleCompanyFormPage(startId, endId, checkField, sendForm = false){
   }
 }
 
-let map; //Google maps object
+let mapCompanyRegister; //Google maps object
+let mapPartners;
 let marker = null; //marker display on the map
 
 /** Init the Google Maps */
 function initMap() {
   if (navigator.geolocation){
     navigator.geolocation.getCurrentPosition((pos)=> {
-      map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: pos.coords.latitude, lng: pos.coords.longitude},
-        zoom: 10,
-        streetViewControl: false,
-        fullscreenControl: false,
-      });
 
-    //If there was an error in the form reloads the marker on the map
-    let htmlLatitude = document.getElementsByName('latitude')[0].value;
-    let htmlLongitude = document.getElementsByName('longitude')[0].value;
-    if(htmlLatitude !== "" && htmlLongitude !== ""){
-      placeMarker({lat: parseFloat(htmlLatitude), lng: parseFloat(htmlLongitude)});
-    }
+      let mapCompanyRegisterElem = document.getElementById('mapCompanyRegister');
+      let mapPartnersElem = document.getElementById('mapPartners');
 
-    // Add listener on map clic
-    google.maps.event.addListener(map, "click", function (event) {
-      var latitude = event.latLng.lat();
-      var longitude = event.latLng.lng();
+      if(mapPartnersElem){
+        mapPartners = new google.maps.Map(mapPartnersElem, {
+          center: {lat: pos.coords.latitude, lng: pos.coords.longitude},
+          zoom: 10,
+          streetViewControl: false,
+          fullscreenControl: false,
+        });
 
-      //store de latitude and longitude in hidden input
-      document.getElementsByName('latitude')[0].value = latitude;
-      document.getElementsByName('longitude')[0].value = longitude;
+        fetch('http://127.0.0.1/Fid-Arc/public/api/companies')
+          .then(
+            function(response) {
+              if (response.status !== 200) {
+                console.log('Looks like there was a problem. Status Code: ' + response.status);
+                return;
+              }
 
-      // If the marker is defined, delete it on the map
-      if(marker !== null){
-        marker.setMap(null)
+              response.json().then(function(data) {
+                for(i in data.data){
+                  let markerPartner = new google.maps.Marker({
+                      position: new google.maps.LatLng(data.data[i].latitude, data.data[i].longitude),
+                      title: data.data[i].company_name,
+                      animation: google.maps.Animation.DROP,
+                      map:mapPartners
+                    });
+
+                    let infoWindow = new google.maps.InfoWindow({
+                        content: '<h2>' + data.data[i].company_name + '</h2>' +'<p><strong>Company description : </strong>'+data.data[i].company_description+'</p>'
+                      });
+
+                    google.maps.event.addListener(markerPartner , 'click', function () {
+                      infoWindow.open(mapPartners, markerPartner );
+                    });
+                }
+              });
+            }
+          )
+          .catch(function(err) {
+            console.log('Fetch Error :-S', err);
+          });
       }
-      placeMarker(event.latLng);
-      });
+
+      if(mapCompanyRegisterElem){
+        mapCompanyRegister = new google.maps.Map(mapCompanyRegisterElem, {
+          center: {lat: pos.coords.latitude, lng: pos.coords.longitude},
+          zoom: 10,
+          streetViewControl: false,
+          fullscreenControl: false,
+        });
+
+      //If there was an error in the form reloads the marker on the map
+      let htmlLatitude = document.getElementsByName('latitude')[0].value;
+      let htmlLongitude = document.getElementsByName('longitude')[0].value;
+      if(htmlLatitude !== "" && htmlLongitude !== ""){
+        placeMarker({lat: parseFloat(htmlLatitude), lng: parseFloat(htmlLongitude)});
+      }
+
+      // Add listener on map clic
+      google.maps.event.addListener(mapCompanyRegister, "click", function (event) {
+        var latitude = event.latLng.lat();
+        var longitude = event.latLng.lng();
+
+        //store de latitude and longitude in hidden input
+        document.getElementsByName('latitude')[0].value = latitude;
+        document.getElementsByName('longitude')[0].value = longitude;
+
+        // If the marker is defined, delete it on the map
+        if(marker !== null){
+          marker.setMap(null)
+        }
+        placeMarker(event.latLng);
+        });
+      }
+
     });
   } else {
   alert("Please active geolocation !");
@@ -93,6 +144,6 @@ function initMap() {
 function placeMarker(location) {
     marker = new google.maps.Marker({
         position: location,
-        map: map
+        map: mapCompanyRegister
     });
 }

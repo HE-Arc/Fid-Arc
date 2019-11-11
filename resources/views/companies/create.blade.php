@@ -71,7 +71,7 @@
         @error('company_location')
             <strong>{{ $message }}</strong>
         @enderror
-        <div id="map" style="height:400px; width:100%;"></div>
+        <div id="mapCompanyRegister" style="height:400px; width:100%;"></div>
         {{ Form::hidden('latitude', old('latitude')) }}
         {{ Form::hidden('longitude', old('longitude')) }}
 
