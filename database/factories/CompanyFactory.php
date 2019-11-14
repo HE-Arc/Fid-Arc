@@ -2,6 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 use App\Company;
+use App\CardColor;
 use Faker\Generator as Faker;
 
 /*
@@ -16,6 +17,9 @@ use Faker\Generator as Faker;
 */
 
 $factory->define(Company::class, function (Faker $faker) {
+
+    $idsColor = CardColor::where('id' ,'>' ,0)->pluck('id')->toArray();
+
     return [
         'company_name' => $faker->company,
         'company_description' => $faker->realText($maxNbChars = 100, $indexSize = 2),
@@ -23,6 +27,6 @@ $factory->define(Company::class, function (Faker $faker) {
         'longitude' => $faker->longitude(6.930020, 6.934205),
         'number_fidelity_points' => 10,
         'message_to_user' => "Adieu pétole",
-        'card_color_id' => 1,
+        'card_color_id' => $idsColor[array_rand($idsColor, 1)],
     ];
 });
