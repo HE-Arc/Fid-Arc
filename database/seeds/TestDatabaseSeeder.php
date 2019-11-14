@@ -18,11 +18,13 @@ class TestDatabaseSeeder extends Seeder
         DB::table('roles')->truncate();
         App\User::truncate();
         App\Company::truncate();
+        App\CompanyUser::truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
         $this->call(CardColorsTableSeeder::class);
         $this->call(RolesAndPermissionsSeeder::class);
         $this->call(UsersTableSeeder::class);
         $this->call(CompaniesTestSeeder::class);
+        $this->call(CompanyUserTableSeeder::class);
     }
 }
