@@ -1,9 +1,11 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
+
+use App\Company;
 use App\User;
+use App\CompanyUser;
 use Faker\Generator as Faker;
-use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,13 +18,15 @@ use Illuminate\Support\Str;
 |
 */
 
-$factory->define(User::class, function (Faker $faker) {
+$factory->define(CompanyUser::class, function (Faker $faker) {
+
+    $idsUser = User::role('client')->where('id' ,'>' ,0)->pluck('id')->toArray();
+    $idsCompany = Company::where('id' ,'>' ,0)->pluck('id')->toArray();
+
     return [
-        'name' => $faker->firstName,
-        'lastname' => $faker->lastName,
-        'email' => $faker->unique()->safeEmail,
-        'email_verified_at' => now(),
-        'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-        'remember_token' => Str::random(10),
+        'user_id' => $idsUser[array_rand($idsUser, 1)],
+        'company_id' => $idsCompany[array_rand($idsCompany, 1)],
+        'number_of_points' => rand(0, 100),
+        'is_subscribed_to_emails' => (bool)random_int(0, 1),
     ];
 });
