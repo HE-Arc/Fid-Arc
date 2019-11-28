@@ -27,8 +27,8 @@
           </div>
         </div>
       </div>
-      <div class="col-sm" >
-        <h3 class="text-center">Send email to user</h3>
+      <div class="col-sm">
+        <h3 class="text-center">Send email to users</h3>
         <div class="card border-secondary">
           <div class="card-header"><strong>Email</strong></div>
           <div class="card-body">
