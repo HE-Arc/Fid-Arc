@@ -15,6 +15,11 @@ class Company extends Model
       return $this->belongsToMany("App\User")->using('App\CompanyUser')->withPivot('number_of_points');
     }
 
+    public function hasSubscribedUser($userId)
+    {
+      return $this->subscribedUser->count();
+    }
+
     public function cardColor()
     {
       return $this->belongsTo('App\CardColor');
