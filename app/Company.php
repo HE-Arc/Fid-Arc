@@ -1,6 +1,8 @@
 <?php
 namespace App;
 use Illuminate\Database\Eloquent\Model;
+use App\CompanyUser;
+
 class Company extends Model
 {
     public function userAccount()
@@ -8,9 +10,9 @@ class Company extends Model
       return $this->hasOne("App\User");
     }
 
-    public function suscribedUser()
+    public function subscribedUser()
     {
-      return $this->belongsToMany("App\User")->using('App\CompanyUser');
+      return $this->belongsToMany("App\User")->using('App\CompanyUser')->withPivot('number_of_points');
     }
 
     public function cardColor()
@@ -22,7 +24,7 @@ class Company extends Model
      *
      * @var array
      */
-    protected $hidden = ['id', 'created_at', 'updated_at', 'card_color_id', 'user_id', 'number_fidelity_points'];
+    protected $hidden = ['created_at', 'updated_at'];
 
     /**
      * The attributes that are mass assignable.
