@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Hash;
 use App\User;
 use App\Company;
 use App\CardColor;
+use App\Mail\sendMail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 use Auth;
@@ -56,8 +58,23 @@ class CompanyController extends Controller
     return view('companies.profile', ['userInfos' => $user, 'companyInfos' => $companyInfos, 'cardColor' => $cardColor]);
   }
 
-  public function sendMail()
+  public function sendMail(Request $request)
   {
-    
+    $this->validate($request, [
+      'emailContent' =>  'required',
+      'company' => 'required'
+    ]);
+
+    $data = array(
+        'emailContent' => $request->emailContent,
+        'company' => $request->company
+    );
+
+    $mail = new SendMail($data);
+
+    // Send it to all user subscribed to company
+    Mail::to('vincentmoulin47@gmail.com')->send($mail->build());
+
+    return back()->with('success', 'Emails sent succesfully!');
   }
 }
