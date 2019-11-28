@@ -5,21 +5,28 @@ use App\CompanyUser;
 
 class Company extends Model
 {
+  /**
+   * HasOne relationship to the user
+   * @return Object relationship to the user
+   */
     public function userAccount()
     {
       return $this->hasOne("App\User");
     }
 
+    /**
+     * BelongsToMany relationship to the user with the pivot table
+     * @return Object relationship to the user withn pivot table
+     */
     public function subscribedUser()
     {
       return $this->belongsToMany("App\User")->using('App\CompanyUser')->withPivot('number_of_points');
     }
 
-    public function hasSubscribedUser($userId)
-    {
-      return $this->subscribedUser->count();
-    }
-
+    /**
+     * BelongTo relationship to card color
+     * @return Object relationship to card color
+     */
     public function cardColor()
     {
       return $this->belongsTo('App\CardColor');

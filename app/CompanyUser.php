@@ -7,6 +7,12 @@ use Response;
 
 class CompanyUser extends Pivot
 {
+  /**
+   * Return the relation between the user and the company if it exist, otherwise return false
+   * @param  Integer  $id_user    scanned user id
+   * @param  Integer  $id_company logged company id
+   * @return Object             return the relation CompanyUser if it exist, otherwise return false
+   */
   private static function isRelationExsist($id_user, $id_company)
   {
     $companyUser = CompanyUser::where('user_id', $id_user)->where('company_id', $id_company)->first();//find the relation in the pivot table with the user id and company id
@@ -20,13 +26,19 @@ class CompanyUser extends Pivot
     }
   }
 
-  private function addPoint($max_number_of_points, $message)
+  /**
+   * Add a point to a user for a company.
+   * If the maximum point is reach, put the message for the user in the http_response status, and set the current point to 0
+   * @param Integer $max_number_of_points maximum number of point define by the company
+   * @return Array array that contain the status and the code of the http response
+   */
+  private function addPoint($max_number_of_points)
   {
     $http_response = array();
-    if($this->number_of_points == $max_number_of_points)
+    if($this->number_of_points == $max_number_of_points-1)
     {
-      $this->number_of_points = 1;
-      array_push($http_response, $message, 202);
+      $this->number_of_points = 0;
+      array_push($http_response, 'Number of point is set to 0', 202);
     }
     else
     {
@@ -37,6 +49,12 @@ class CompanyUser extends Pivot
     return $http_response;
   }
 
+  /**
+   * Add a point to the user or create the relation
+   * @param Integer $user_id user id
+   * @param Object $company company model
+   * @return Array array that contain the status and the code of the http response 
+   */
   public static function addPointOrCreateRelation($user_id, $company)
   {
     $http_response = array();

@@ -11,11 +11,19 @@ class User extends Authenticatable
 {
     use HasRoles, HasApiTokens, CanResetPassword, Notifiable;
 
+    /**
+     * HasOne relationship to the company
+     * @return Object relationship to the company
+     */
     public function companyAccount()
     {
       return $this->hasOne("App\Company");
     }
 
+    /**
+     * BelongsToMany relationship to the company with pivot table
+     * @return Object relationship to the company with pivot table
+     */
     public function fidelityCards()
     {
       return $this->belongsToMany("App\Company")->using('App\CompanyUser')->withPivot('number_of_points');
