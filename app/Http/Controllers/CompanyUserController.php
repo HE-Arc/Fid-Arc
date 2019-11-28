@@ -43,6 +43,24 @@ class CompanyUserController extends Controller
   }
 
   /**
+   * Get the number of fidelity point between the user and the company.
+   * @param  Integer $scanned_user_id user id
+   * @return Object return json of number_of_points
+   */
+  public function getCardPoints($scanned_user_id)
+  {
+    $company_id = auth()->user()->companyAccount()->get()[0]['id'];
+    $cu = CompanyUser::isRelationExsist($scanned_user_id, $company_id);
+    $number_of_points = -1;
+
+    if($cu)
+    {
+      $number_of_points = $cu->number_of_points;
+    }
+    return json_encode(['number_of_points' => $number_of_points]);
+  }
+
+  /**
    * Get all fidelity card for connect user
    * @return Object fidelity cards for a user
    */

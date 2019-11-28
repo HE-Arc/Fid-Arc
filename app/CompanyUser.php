@@ -13,7 +13,7 @@ class CompanyUser extends Pivot
    * @param  Integer  $id_company logged company id
    * @return Object             return the relation CompanyUser if it exist, otherwise return false
    */
-  private static function isRelationExsist($id_user, $id_company)
+  public static function isRelationExsist($id_user, $id_company)
   {
     $companyUser = CompanyUser::where('user_id', $id_user)->where('company_id', $id_company)->first();//find the relation in the pivot table with the user id and company id
     if(is_null($companyUser))
@@ -35,7 +35,7 @@ class CompanyUser extends Pivot
   private function addPoint($max_number_of_points)
   {
     $http_response = array();
-    if($this->number_of_points == $max_number_of_points-1)
+    if($this->number_of_points == $max_number_of_points - 1)
     {
       $this->number_of_points = 0;
       array_push($http_response, 'Number of point is set to 0', 202);
@@ -53,7 +53,7 @@ class CompanyUser extends Pivot
    * Add a point to the user or create the relation
    * @param Integer $user_id user id
    * @param Object $company company model
-   * @return Array array that contain the status and the code of the http response 
+   * @return Array array that contain the status and the code of the http response
    */
   public static function addPointOrCreateRelation($user_id, $company)
   {
