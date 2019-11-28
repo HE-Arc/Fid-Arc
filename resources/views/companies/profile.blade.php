@@ -32,8 +32,33 @@
         <div class="card border-secondary">
           <div class="card-header"><strong>Email</strong></div>
           <div class="card-body">
-            <textarea name="emailContent" rows="10" class="form-control" placeholder="Email content ..."></textarea>
-            <button type="button" class="btn btn-dark btn-block">Send emails</button>
+
+            @if (count($errors) > 0)
+              <div class="alert alert-danger">
+              <button type="button" class="close" data-dismiss="alert">×</button>
+              <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+              </ul>
+              </div>
+            @endif
+            @if ($message = Session::get('success'))
+            <div class="alert alert-success alert-block">
+              <button type="button" class="close" data-dismiss="alert">×</button>
+              <strong>{{ $message }}</strong>
+            </div>
+            @endif
+            <form method="post" action="{{url('/send_mail')}}">
+              {{ csrf_field() }}
+              <div class="form-group">
+              <label>Enter your message</label>
+              <textarea name="emailContent" rows="10" class="form-control" placeholder="Email content ..."></textarea>
+              </div>
+              <div class="form-group">
+              <input type="submit" name="send" class="btn btn-dark btn-block" value="Send" />
+              </div>
+            </form>
           </div>
         </div>
       </div>

@@ -57,4 +57,9 @@ class CompanyController extends Controller
       return view('companies.profile', ['userInfos' => $user, 'companyInfos' => $companyInfos, 'cardColor' => $cardColor]);
     }
   }
+
+  public function sendMail()
+  {
+    
+  }
 }
