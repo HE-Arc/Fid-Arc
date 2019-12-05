@@ -27,7 +27,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+        <nav class="navbar fixed-top navbar-expand-md navbar-light">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Fid-Arc') }}
@@ -41,9 +41,6 @@
                     <ul class="navbar-nav mr-auto">
                       <li class="nav-item active">
                         <a class="nav-link" href="{{ url('/') }}">Home<span class="sr-only">(current)</span></a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="{{ url('companies') }}">Our partners</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="{{ url('companies/create') }}">Create company account</a>
@@ -89,10 +86,10 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
-        <nav id="footer" class="navbar fixed-bottom navbar-dark bg-dark bg-faded">
+        <nav id="footer" class="navbar navbar-dark bg-dark bg-faded">
           <small style="color:white;">Copyright &copy; 2019, Fid-Arc</small>
         </nav>
     </div>
