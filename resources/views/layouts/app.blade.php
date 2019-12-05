@@ -41,10 +41,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item {{ (request()->is('/')) ? 'active' : '' }}">
                         <a class="nav-link" href="{{ url('/') }}">Home<span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{ (request()->is('companies/create*')) ? 'active' : '' }}">
                         <a class="nav-link" href="{{ url('companies/create') }}">Create company account</a>
                     </li>
                 </ul>
@@ -53,11 +53,11 @@
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
                     @guest
-                        <li class="nav-item">
+                        <li class="nav-item {{ (request()->is('login*')) ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
                         @if (Route::has('register'))
-                            <li class="nav-item">
+                            <li class="nav-item {{ (request()->is('register*')) ? 'active' : '' }}">
                                 <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                         @endif
