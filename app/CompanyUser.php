@@ -33,12 +33,13 @@ class CompanyUser extends Pivot
     private function addPoint($max_number_of_points)
     {
         $http_response = array();
-        if ($this->number_of_points == $max_number_of_points - 1) {
-            $this->number_of_points = 0;
-            array_push($http_response, 'Number of point is set to 0', 202);
+        $this->number_of_points += 1;
+        if ($this->number_of_points == $max_number_of_points) {
+          $this->number_of_points = 0;
+          array_push($http_response, 'Number of point is set to 0', 202);
+          //TODO send notif to the user
         } else {
-            $this->number_of_points += 1;
-            array_push($http_response, 'Number of point is inc', 202);
+          array_push($http_response, 'Number of point is inc', 202);
         }
         $this->save();
         return $http_response;
@@ -61,8 +62,9 @@ class CompanyUser extends Pivot
                 'user_id' => $user_id,
                 'company_id' => $company_id,
                 'number_of_points' => 1,
-                'is_subscribed_to_emails' => 0
+                'is_subscribed_to_emails' => 0,
             ]);
+            //TODO send notif for the user for email
             array_push($http_response, 'Create relation between user and company', 201);
             return $http_response;
         } else {

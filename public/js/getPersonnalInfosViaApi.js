@@ -27,7 +27,7 @@ fetch('fidelityCards').then(
                     document.getElementById("fidelitycards").innerHTML += html
                 })
             }
-            
+
         })
     }
 ).catch(function(err) {
