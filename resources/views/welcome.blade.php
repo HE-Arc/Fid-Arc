@@ -6,10 +6,11 @@
 
         <section id="callToAction">
             <div class="container h-100">
-                <div class="h-100 d-flex flex-column justify-content-center align-items-center text-center">
+                <div class="h-100 d-flex flex-column justify-content-center align-items-start text-left">
                     <h1 class="display-1">Scan and win!</h1>
-                    <p class="lead">
-                        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                    <p class="display-4">Discover our new app which allow you to earn points and redeem for prizes.</p>
+                    <p class="lead mt-5">
+                        <a class="btn btn-primary btn-lg" href="#" role="button">Download the app</a>
                     </p>
                 </div>
             </div>
@@ -72,6 +73,10 @@
                     </div>
                 </div>
             </div>
+        </section>
+
+        <section>
+
         </section>
     </div>
 

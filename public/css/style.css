@@ -109,6 +109,29 @@ nav.fill {
 .navbar-brand {
     font-weight: bold;
     font-size: 24px;
+    padding-bottom: 10px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #202426;
+
+    transition: 300ms;
+    border-bottom: 2px solid transparent;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #202426;
+
+    border-bottom-color: #202426;
+}
+
+.navbar-light .navbar-nav .nav-item.active .nav-link {
+    border-bottom: 2px solid transparent;
+    border-bottom-color: #202426;
 }
 
 /*------
