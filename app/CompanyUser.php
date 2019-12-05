@@ -16,6 +16,9 @@ class CompanyUser extends Pivot
   public static function isRelationExsist($id_user, $id_company)
   {
     $companyUser = CompanyUser::where('user_id', $id_user)->where('company_id', $id_company)->first();//find the relation in the pivot table with the user id and company id
+
+
+
     if(is_null($companyUser))
     {
       return false;
