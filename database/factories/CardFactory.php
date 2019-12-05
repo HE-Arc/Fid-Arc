@@ -26,7 +26,7 @@ $factory->define(CompanyUser::class, function (Faker $faker) {
     return [
         'user_id' => $idsUser[array_rand($idsUser, 1)],
         'company_id' => $idsCompany[array_rand($idsCompany, 1)],
-        'number_of_points' => rand(0, 100),
+        'number_of_points' => rand(0, 9),
         'is_subscribed_to_emails' => (bool)random_int(0, 1),
     ];
 });
