@@ -23,6 +23,7 @@ Route::middleware ('auth', 'verified')->group (function () {
 });
 
 Route::resource('companies', 'CompanyController')->only(['create', 'store', 'show', 'index']);
+Route::post('/send_mail', 'CompanyController@sendMail')->name('sendmail');
 Auth::routes();
 
 Route::get('/fidelityCards', 'CompanyUserController@getFidelityCards')->name('fidelityCards');
