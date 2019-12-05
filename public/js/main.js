@@ -54,23 +54,24 @@ let marker = null; //marker display on the map
  */
 function useMap(lat, lng){
 
-        let mapCompanyRegisterElem = document.getElementById('mapCompanyRegister');
-        let mapPartnersElem = document.getElementById('mapPartners');
+      let mapCompanyRegisterElem = document.getElementById('mapCompanyRegister');
+      let mapPartnersElem = document.getElementById('mapPartners');
 
-        if(mapPartnersElem){
-          mapPartners = new google.maps.Map(mapPartnersElem, {
-            center: {lat: lat, lng: lng},
-            zoom: 10,
-            streetViewControl: false,
-            fullscreenControl: false,
-          });
+      if(mapPartnersElem){
+        mapPartners = new google.maps.Map(mapPartnersElem, {
+          center: {lat: pos.coords.latitude, lng: pos.coords.longitude},
+          zoom: 10,
+          streetViewControl: false,
+          fullscreenControl: false,
+        });
 
-          //Fetch request to get all the company infos and display it on the map
-          fetch('http://127.0.0.1/Fid-Arc/public/api/companies').then(function(response) {
-                  if (response.status !== 200) {
-                    console.log('Looks like there was a problem. Status Code: ' + response.status);
-                    return;
-                 }
+        fetch('api/companies')
+          .then(
+            function(response) {
+              if (response.status !== 200) {
+                console.log('Looks like there was a problem. Status Code: ' + response.status);
+                return;
+              }}
 
                 response.json().then(function(data) {
                   for(i in data.data){
