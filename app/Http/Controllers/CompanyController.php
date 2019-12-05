@@ -70,27 +70,12 @@ class CompanyController extends Controller
         'company' => $request->company
     );
 
-    $mail = new SendMail($data);
-    $obj = $mail->build();
-
     // Get all users subscribed to mail to a company
-    //$users = auth()->user()->companyAccount->get()[0]->subscribedUser()->get();
+    $users = auth()->user()->companyAccount->get()[0]->subscribedUser()->get();
 
-    //$array = array();
-
-    /*foreach($users as $user){
-      array_push($array, $user['email']);
-    }*/
-
-    //array_push($array, 'vincentmoulin47@gmail.com');
-
-    // Send too to personnal adress to test
-    Mail::to('vincentmoulin47@gmail.com')->send($obj);
-
-    /*Mail::send('mail.company_mail', $data, function($message) use ($array, $data)
-    {    
-      $message->to($array)->subject('This is test e-mail');
-    });*/
+    foreach($users as $user){
+      Mail::to($user['email'])->send((new SendMail($data))->build());
+    }
 
     return back()->with('success', 'Emails sent succesfully!');
   }
