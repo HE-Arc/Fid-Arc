@@ -30,6 +30,6 @@ class SendMail extends Mailable
      */
     public function build()
     {
-        return $this->from('fidarc@nectoria.com')->subject('Message from FidArc')->view('mail.company_mail')->with('data', $this->data);
+        return $this->from('contact@fidarc.ch')->subject('Message from FidArc')->view('mail.company_mail')->with('data', $this->data);
     }
 }

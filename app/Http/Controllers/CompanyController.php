@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Hash;
 use App\User;
 use App\Company;
 use App\CardColor;
-use App\Mail\sendMail;
+use App\Mail\SendMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
