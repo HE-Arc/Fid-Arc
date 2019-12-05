@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class CardColor extends Model
 {
+    /**
+     * Hasmany relationship to company
+     * @return Object relation to the company
+     */
     public function companies()
     {
       return $this->hasMany('App\Company');

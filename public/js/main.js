@@ -66,7 +66,7 @@ function initMap() {
           fullscreenControl: false,
         });
 
-        fetch('http://127.0.0.1/Fid-Arc/public/api/companies')
+        fetch('api/companies')
           .then(
             function(response) {
               if (response.status !== 200) {
