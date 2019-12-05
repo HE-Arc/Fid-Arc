@@ -66,6 +66,7 @@ function initMap() {
           fullscreenControl: false,
         });
 
+        //Fetch request to get all the company infos and display it on the map
         fetch('http://127.0.0.1/Fid-Arc/public/api/companies')
           .then(
             function(response) {
@@ -76,6 +77,7 @@ function initMap() {
 
               response.json().then(function(data) {
                 for(i in data.data){
+                  //Create marker
                   let markerPartner = new google.maps.Marker({
                       position: new google.maps.LatLng(data.data[i].latitude, data.data[i].longitude),
                       title: data.data[i].company_name,
@@ -83,6 +85,7 @@ function initMap() {
                       map:mapPartners
                     });
 
+                    //Create info windows
                     let infoWindow = new google.maps.InfoWindow({
                         content: '<h2>' + data.data[i].company_name + '</h2>' +'<p><strong>Company description : </strong>'+data.data[i].company_description+'</p>'
                       });

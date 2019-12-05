@@ -22,10 +22,7 @@ class CompanyUserController extends Controller
    */
   public function addFidelityPoint(Request $request)
   {
-    $validator = Validator::make($request->all(), [
-            'scanned_user_id' => 'required|integer',
-            'is_subscribed_to_emails' => 'boolean'
-        ]);
+    $validator = Validator::make($request->all(), ['scanned_user_id' => 'required|integer']);
 
     $http_response = array();
 
