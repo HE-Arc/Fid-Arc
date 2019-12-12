@@ -35,7 +35,7 @@ class CompanyController extends Controller
 
     $user->assignRole('company');
 
-    $company = Company::create([
+    Company::create([
       'company_name' => $arrayResult['company_name'],
       'company_description' => $arrayResult['company_description'],
       'latitude' => $arrayResult['latitude'],
@@ -51,7 +51,7 @@ class CompanyController extends Controller
   public function profile()
   {
     $user = auth()->user();
-    $companyInfos = $user->companyAccount;
+    $companyInfos = $user->company;
     $cardColor = CardColor::findOrFail($companyInfos['card_color_id'])['color'];
     return view('companies.profile', ['userInfos' => $user, 'companyInfos' => $companyInfos, 'cardColor' => $cardColor]);
   }

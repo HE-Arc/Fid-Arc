@@ -176,7 +176,7 @@ COMPANY
  -----*/
 
 /* Generic for form */
-.container .row.justify-content-center {
+.container .row.justify-content-center, #userProfile, #companyProfile {
     margin-top: 150px;
 }
 
