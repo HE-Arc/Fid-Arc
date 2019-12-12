@@ -33,36 +33,37 @@
                         </div>
                     </div>
                     <div class="col-sm">
-        <h3 class="text-center">Send email to users</h3>
-        <div class="card border-secondary">
-          <div class="card-header"><strong>Email</strong></div>
-          <div class="card-body">
-            @if ($message = Session::get('error'))
-            <div class="alert alert-danger alert-block">
-              <button type="button" class="close" data-dismiss="alert">×</button>
-              <strong>{{ $message }}</strong>
-            </div>
-            @endif
-            @if ($message = Session::get('success'))
-            <div class="alert alert-success alert-block">
-              <button type="button" class="close" data-dismiss="alert">×</button>
-              <strong>{{ $message }}</strong>
-            </div>
-            @endif
-            <form method="post" action="{{url('/send_mail')}}">
-              {{ csrf_field() }}
-              <div class="form-group">
-              <label>Enter your message</label>
-              <textarea name="emailContent" rows="10" class="form-control" placeholder="Email content ..."></textarea>
-              </div>
-              <input type='hidden' name='company' value="{{ $companyInfos->company_name }}"/>
-              <div class="form-group">
-              <input type="submit" name="send" class="btn btn-dark btn-block" value="Send" />
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
+                        <h3 class="text-center">Send email to users</h3>
+                        <div class="card border-secondary">
+                            <div class="card-header"><strong>Email</strong></div>
+                            <div class="card-body">
+                                @if ($message = Session::get('error'))
+                                    <div class="alert alert-danger alert-block">
+                                        <button type="button" class="close" data-dismiss="alert">×</button>
+                                        <strong>{{ $message }}</strong>
+                                    </div>
+                                @endif
+                                @if ($message = Session::get('success'))
+                                    <div class="alert alert-success alert-block">
+                                        <button type="button" class="close" data-dismiss="alert">×</button>
+                                        <strong>{{ $message }}</strong>
+                                    </div>
+                                @endif
+                                <form method="post" action="{{url('/send_mail')}}">
+                                    {{ csrf_field() }}
+                                    <div class="form-group">
+                                        <label>Enter your message</label>
+                                        <textarea name="emailContent" rows="10" class="form-control"
+                                                  placeholder="Email content ..."></textarea>
+                                    </div>
+                                    <input type='hidden' name='company' value="{{ $companyInfos->company_name }}"/>
+                                    <div class="form-group">
+                                        <input type="submit" name="send" class="btn btn-dark btn-block" value="Send"/>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
