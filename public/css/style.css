@@ -175,7 +175,7 @@ section#partners:before {
 COMPANY
  -----*/
 
-#createCompanyAccount {
+#createCompanyAccount, #login {
     margin-top: 150px;
 }
 
