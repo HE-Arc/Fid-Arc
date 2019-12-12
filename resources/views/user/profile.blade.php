@@ -15,8 +15,6 @@
                     <p class="card-text mb-0"><strong>Name :</strong> {{ $user->name }}</p>
                     <p class="card-text mb-0"><strong>Lastname :</strong> {{ $user->lastname }}</p>
                     <p class="card-text"><strong>Member since :</strong> {{ date('F d, Y', strtotime($user->created_at)) }}</p>
-                    <a href="#" class="card-link">Edit your informations</a>
-                    <a href="#" class="card-link"><br>Reset your password</a>
                 </div>
             </div>
         </div>
