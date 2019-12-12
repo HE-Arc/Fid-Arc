@@ -297,4 +297,17 @@ FOOTER
     .single-card {
         margin-top: 30px;
     }
+
+    .display-1 {
+        font-size: 3rem;
+    }
+
+    .display-4 {
+        font-size: 2rem;
+    }
+
+    #app > nav {
+        background-color: #44CCFF;
+        transition: none;
+    }
 }
