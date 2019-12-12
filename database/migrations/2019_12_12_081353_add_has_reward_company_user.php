@@ -14,7 +14,7 @@ class AddHasRewardCompanyUser extends Migration
     public function up()
     {
         Schema::table('company_user', function($table){
-          $table->boolean('has_reward')->default(1);
+          $table->boolean('has_reward')->default(0);
         });
     }
 

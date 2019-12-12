@@ -35,13 +35,13 @@ class CompanyUser extends Pivot
     private function addPoint($max_number_of_points)
     {
         $http_response = array();
-        if ($this->has_reward)
+        if (!$this->has_reward)
         {
           $this->number_of_points += 1;
           if ($this->number_of_points == $max_number_of_points)
           {
             $this->number_of_points = 0;
-            $this->has_reward = 0;
+            $this->has_reward = 1;
             array_push($http_response, ["status" =>"The user can reclaim his reward.", "number_of_points"=> $this->number_of_points], 202);
           }
           else
@@ -77,13 +77,13 @@ class CompanyUser extends Pivot
                 'company_id' => $company_id,
                 'number_of_points' => CompanyUser::INITIAL_NUMBER_OF_POINTS,
                 'is_subscribed_to_emails' => 1,
-                'has_reward' => 1
+                'has_reward' => 0
             ]);
             //TODO send notif for the user for email
             array_push($http_response, ["status" =>"The relation between user and company is created.", "number_of_points"=> CompanyUser::INITIAL_NUMBER_OF_POINTS], 201);
             return $http_response;
         } else {
-            return $cu->addPoint($company['number_fidelity_points'], $company['message_to_user']);
+            return $cu->addPoint($company['number_fidelity_points']);
         }
     }
 
