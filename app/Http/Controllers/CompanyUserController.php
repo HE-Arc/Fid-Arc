@@ -34,7 +34,7 @@ class CompanyUserController extends Controller
     }
     else
     {
-      array_push($http_response, ["error" => "Please send the correct parameter"], 401);
+      array_push($http_response, ["error" => "Please send the correct parameter."], 401);
     }
     return response($http_response[0], $http_response[1])->header('Content-Type', 'text/plain');
   }
