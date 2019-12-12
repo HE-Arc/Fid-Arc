@@ -180,6 +180,10 @@ COMPANY
     margin-top: 150px;
 }
 
+form label {
+    font-weight: bolder;
+}
+
 #companyProfile h1 {
     margin-bottom: 40px;
 }

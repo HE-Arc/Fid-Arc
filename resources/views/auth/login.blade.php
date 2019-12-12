@@ -10,14 +10,14 @@
                 </div>
                 {{ Form::open(['url' =>'login']) }}
                 <div class="form-group">
-                    {{ Form::label('email', 'E-mail address : ') }}
+                    {{ Form::label('email', 'E-mail address') }}
                     {{ Form::email('email', old('email'), $errors->has('email') ? ['class'=>'is-invalid form-control'] : ['class' => 'form-control']) }}
                     @error('email')
                     <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
                     @enderror
                 </div>
                 <div class="form-group">
-                    {{ Form::label('password', 'Password : ') }}
+                    {{ Form::label('password', 'Password') }}
                     {{ Form::password('password', $errors->has('password') ? ['class'=>'is-invalid form-control'] : ['class' => 'form-control']) }}
                     @error('password')
                     <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
