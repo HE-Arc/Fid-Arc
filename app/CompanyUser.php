@@ -8,6 +8,8 @@ use Response;
 
 class CompanyUser extends Pivot
 {
+  const INITIAL_NUMBER_OF_POINTS = 1;
+
     /**
      * Return the relation between the user and the company if it exist, otherwise return false
      * @param Integer $id_user scanned user id
@@ -36,11 +38,8 @@ class CompanyUser extends Pivot
         $this->number_of_points += 1;
         if ($this->number_of_points == $max_number_of_points) {
           $this->number_of_points = 0;
-          array_push($http_response, 'Number of point is set to 0', 202);
-          //TODO send notif to the user
-        } else {
-          array_push($http_response, 'Number of point is inc', 202);
         }
+        array_push($http_response, ["status" =>"Number of point is updated", "number_of_points"=> $this->number_of_points], 202);
         $this->save();
         return $http_response;
     }
@@ -58,14 +57,15 @@ class CompanyUser extends Pivot
 
         $cu = CompanyUser::isRelationExsist($user_id, $company_id);
         if (!$cu) {
+          $initial_number_of_point = 1;
             CompanyUser::create([
                 'user_id' => $user_id,
                 'company_id' => $company_id,
-                'number_of_points' => 1,
+                'number_of_points' => CompanyUser::INITIAL_NUMBER_OF_POINTS,
                 'is_subscribed_to_emails' => 0,
             ]);
             //TODO send notif for the user for email
-            array_push($http_response, 'Create relation between user and company', 201);
+            array_push($http_response, ["status" =>"The relation between user and company is created", "number_of_points"=> CompanyUser::INITIAL_NUMBER_OF_POINTS], 201);
             return $http_response;
         } else {
             return $cu->addPoint($company['number_fidelity_points'], $company['message_to_user']);
