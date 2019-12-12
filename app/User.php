@@ -7,6 +7,9 @@ use Laravel\Passport\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Auth\Passwords\CanResetPassword;
 
+/**
+ * User class with useful methods
+ */
 class User extends Authenticatable
 {
     use HasRoles, HasApiTokens, CanResetPassword, Notifiable;
@@ -35,7 +38,6 @@ class User extends Authenticatable
      *
      * @var array
      */
-
     protected $fillable = [
         'name', 'lastname', 'email', 'password', 'company'
     ];
@@ -45,7 +47,6 @@ class User extends Authenticatable
      *
      * @var array
      */
-
     protected $hidden = [
         'password', 'remember_token', 'roles'
     ];
