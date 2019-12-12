@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="container-fluid">
+    <div id="main-page" class="container-fluid">
 
         <section id="callToAction">
             <div class="container h-100">

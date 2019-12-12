@@ -1,18 +1,21 @@
+let main_page = document.querySelector('#main-page');
+let navigation = document.querySelector('nav');
+
 /**
  * Event for the scroll and remove transparent background of the navbar
  */
-document.body.onscroll = function () {
-    let navigation = document.querySelector('nav');
+if(main_page != null) {
+    document.body.onscroll = function () {
 
-    if (window.pageYOffset > 0)
-    {
-        navigation.classList.add('fill');
-    }
-    else
-    {
-        navigation.classList.remove('fill');
-    }
-};
+        if (window.pageYOffset > 0) {
+            navigation.classList.add('fill');
+        } else {
+            navigation.classList.remove('fill');
+        }
+    };
+} else {
+    navigation.classList.add('fill');
+}
 
 /**
  * Toggle company form page and check if all inputs are not empty before to change page

@@ -117,7 +117,7 @@ nav.fill {
     font-size: 1.1rem;
     color: #202426;
 
-    transition: 300ms;
+    transition: border-bottom-color 300ms;
     border-bottom: 2px solid transparent;
 }
 
@@ -156,9 +156,6 @@ section#callToAction:after {
     z-index: -1;
 }
 
-section#partners #mapPartners {
-}
-
 section#partners:before {
     position: absolute;
     content: '';
@@ -174,30 +171,12 @@ section#partners:before {
     z-index: 1;
 }
 
-#createCompanyAccount h1 {
-    margin-bottom: 20px;
-}
+/*-----
+COMPANY
+ -----*/
 
-#createCompanyAccount input, #createCompanyAccount select {
-    margin-bottom: 20px;
-}
-
-#createCompanyAccount textarea {
-    margin-bottom: 20px;
-    height: 70px;
-}
-
-#createCompanyAccount .btn-info {
-    display: block;
-    margin-bottom: 20px;
-}
-
-#createCompanyAccount #map {
-    margin-bottom: 20px;
-}
-
-#createCompanyAccount button {
-    margin-bottom: 30px;
+#createCompanyAccount {
+    margin-top: 150px;
 }
 
 #companyProfile h1 {
