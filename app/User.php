@@ -11,11 +11,21 @@ class User extends Authenticatable
 {
     use HasRoles, HasApiTokens, CanResetPassword, Notifiable;
 
-    public function companyAccount()
+    /**
+     * The company account link to this user
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function company()
     {
       return $this->hasOne("App\Company");
     }
 
+    /**
+     * All the cards belonging to this user
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
     public function fidelityCards()
     {
       return $this->belongsToMany("App\Company")->using('App\CompanyUser')->withPivot('number_of_points');
@@ -28,7 +38,7 @@ class User extends Authenticatable
      */
 
     protected $fillable = [
-        'name', 'lastname', 'email', 'password',
+        'name', 'lastname', 'email', 'password', 'company'
     ];
 
     /**
@@ -48,23 +58,34 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'company' => 'json'
     ];
 
+    /**
+     * Append more information to the request
+     *
+     * @var array
+     */
     protected $appends = [
-        'role_names',
-        'company_data'
+        'role_names'
     ];
 
+    /**
+     * Add company to the JSON representation
+     *
+     * @var array
+     */
+    protected $with = [
+        'company'
+    ];
+
+    /**
+     * Return the roles of the current user
+     *
+     * @return \Illuminate\Support\Collection
+     */
     public function getRoleNamesAttribute()
     {
         return $this->getRoleNames();
-    }
-
-    public function getCompanyDataAttribute()
-    {
-        if($this->hasRole('company'))
-            return true; //TODO
-        else
-            return false; //TODO
     }
 }
