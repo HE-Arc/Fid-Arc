@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Hash;
 use App\User;
 use App\Company;
 use App\CardColor;
+use App\Mail\SendMail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 use Auth;
@@ -71,5 +73,27 @@ class CompanyController extends Controller
     $companyInfos = $user->companyAccount;
     $cardColor = CardColor::findOrFail($companyInfos['card_color_id'])['color'];
     return view('companies.profile', ['userInfos' => $user, 'companyInfos' => $companyInfos, 'cardColor' => $cardColor]);
+  }
+
+  public function sendMail(Request $request)
+  {
+    $this->validate($request, [
+      'emailContent' =>  'required',
+      'company' => 'required'
+    ]);
+
+    $data = array(
+        'emailContent' => $request->emailContent,
+        'company' => $request->company
+    );
+
+    // Get all users subscribed to mail to a company
+    $users = auth()->user()->companyAccount->get()[0]->subscribedUser()->get();
+
+    foreach($users as $user){
+      Mail::to($user['email'])->send((new SendMail($data))->build());
+    }
+
+    return back()->with('success', 'Emails sent succesfully!');
   }
 }
