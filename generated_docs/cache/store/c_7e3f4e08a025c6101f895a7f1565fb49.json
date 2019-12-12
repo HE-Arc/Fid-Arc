@@ -1,0 +1,83 @@
+{
+    "name": "App\\Mail\\SendMail",
+    "line": 13,
+    "short_desc": "SendMail class, extends Mailable to build message with a view and datas",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\Mail",
+    "file": "C:\\dev\\inf3dlma\\GITHUB\\Fid-Arc\/app\\Mail\\SendMail.php",
+    "relative_file": null,
+    "hash": "66637d304a09bec11fbd5526405d8464d82b42e9",
+    "parent": "Illuminate\\Mail\\Mailable",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Queueable": "Illuminate\\Bus\\Queueable",
+        "ShouldQueue": "Illuminate\\Contracts\\Queue\\ShouldQueue",
+        "Mailable": "Illuminate\\Mail\\Mailable",
+        "SerializesModels": "Illuminate\\Queue\\SerializesModels"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": {
+        "Illuminate\\Bus\\Queueable": "Illuminate\\Bus\\Queueable",
+        "Illuminate\\Queue\\SerializesModels": "Illuminate\\Queue\\SerializesModels"
+    },
+    "properties": [],
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 26,
+            "short_desc": "Create a new message instance.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "void",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "data": {
+                    "name": "data",
+                    "line": 26,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "build": {
+            "name": "build",
+            "line": 35,
+            "short_desc": "Build the message",
+            "long_desc": "",
+            "hint": [
+                [
+                    "$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

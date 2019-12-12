@@ -1,0 +1,62 @@
+{
+    "name": "App\\Http\\Controllers\\UserController",
+    "line": 13,
+    "short_desc": "UserController",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\Http\\Controllers",
+    "file": "C:\\dev\\inf3dlma\\GITHUB\\Fid-Arc\/app\\Http\\Controllers\\UserController.php",
+    "relative_file": null,
+    "hash": "fd363013690dddfccb3661a5787ac3d685a8a827",
+    "parent": "App\\Http\\Controllers\\Controller",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Request": "Illuminate\\Http\\Request",
+        "Auth": "Illuminate\\Support\\Facades\\Auth",
+        "User": "App\\User",
+        "CardColor": "App\\CardColor"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "__construct__": {
+            "name": "__construct__",
+            "line": 15,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "profile": {
+            "name": "profile",
+            "line": 25,
+            "short_desc": "Display a listing of the resource.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Illuminate\\Http\\Response",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

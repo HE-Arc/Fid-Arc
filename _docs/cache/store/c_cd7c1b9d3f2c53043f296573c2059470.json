@@ -1,0 +1,63 @@
+{
+    "name": "App\\Http\\Resources\\UserCollection",
+    "line": 7,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\Http\\Resources",
+    "file": "C:\\dev\\inf3dlma\\GITHUB\\Fid-Arc\/app\\Http\\Resources\\UserCollection.php",
+    "relative_file": null,
+    "hash": "354e7d5afb3e3bf39a21959f0c0fc9825aebead5",
+    "parent": "Illuminate\\Http\\Resources\\Json\\ResourceCollection",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "ResourceCollection": "Illuminate\\Http\\Resources\\Json\\ResourceCollection"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "toArray": {
+            "name": "toArray",
+            "line": 15,
+            "short_desc": "Transform the resource collection into an array.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "request": {
+                    "name": "request",
+                    "line": 15,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Illuminate\\Http\\Request",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

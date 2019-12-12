@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Response;
 
+/**
+ * CompanyUserController
+ */
 class CompanyUserController extends Controller
 {
 
