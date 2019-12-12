@@ -29,4 +29,4 @@ Route::get('companies', function(){
 
 Route::middleware('auth:api')->post('userGotHisReward', 'CompanyUserController@userGotHisReward')->name('userGotHisReward');
 
-Route::middleware('auth:api')->get('/fidelityCards', 'CompanyUserController@getFidelityCards')->name('fidelityCards');
+Route::middleware('auth:api')->get('fidelityCards', 'CompanyUserController@getFidelityCards')->name('fidelityCards');
