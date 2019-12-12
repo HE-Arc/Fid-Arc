@@ -1,0 +1,185 @@
+{
+    "name": "App\\CompanyUser",
+    "line": 12,
+    "short_desc": "CompanyUser model",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App",
+    "file": "C:\\dev\\inf3dlma\\GITHUB\\Fid-Arc\/app\\CompanyUser.php",
+    "relative_file": null,
+    "hash": "5d258c884ba8626442c6bbe5f1cd0a4c478c2a4e",
+    "parent": "Illuminate\\Database\\Eloquent\\Relations\\Pivot",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Builder": "Illuminate\\Database\\Eloquent\\Builder",
+        "Pivot": "Illuminate\\Database\\Eloquent\\Relations\\Pivot",
+        "Response": "Response"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "isRelationExsist": {
+            "name": "isRelationExsist",
+            "line": 20,
+            "short_desc": "Return the relation between the user and the company if it exist, otherwise return false",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Object",
+                    false
+                ]
+            ],
+            "hint_desc": "return the relation CompanyUser if it exist, otherwise return false",
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "id_user": {
+                    "name": "id_user",
+                    "line": 20,
+                    "short_desc": "scanned user id",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "Integer",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "id_company": {
+                    "name": "id_company",
+                    "line": 20,
+                    "short_desc": "logged company id",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "Integer",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "addPointOrCreateRelation": {
+            "name": "addPointOrCreateRelation",
+            "line": 56,
+            "short_desc": "Add a point to the user or create the relation",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Array",
+                    false
+                ]
+            ],
+            "hint_desc": "array that contain the status and the code of the http response",
+            "tags": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "user_id": {
+                    "name": "user_id",
+                    "line": 56,
+                    "short_desc": "user id",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "Integer",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "company": {
+                    "name": "company",
+                    "line": 56,
+                    "short_desc": "company model",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "Object",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "setKeysForSaveQuery": {
+            "name": "setKeysForSaveQuery",
+            "line": 83,
+            "short_desc": "Set the keys for a save update query.",
+            "long_desc": "This is a fix for tables with composite keys",
+            "hint": [
+                [
+                    "\\Illuminate\\Database\\Eloquent\\Builder",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "query": {
+                    "name": "query",
+                    "line": 83,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Illuminate\\Database\\Eloquent\\Builder",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "Illuminate",
+                            "Database",
+                            "Eloquent",
+                            "Builder"
+                        ],
+                        "attributes": {
+                            "startLine": 83,
+                            "endLine": 83
+                        }
+                    },
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

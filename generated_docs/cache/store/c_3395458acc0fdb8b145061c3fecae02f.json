@@ -1,0 +1,74 @@
+{
+    "name": "App\\Http\\Controllers\\Auth\\VerificationController",
+    "line": 8,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\Http\\Controllers\\Auth",
+    "file": "C:\\dev\\inf3dlma\\GITHUB\\Fid-Arc\/app\\Http\\Controllers\\Auth\\VerificationController.php",
+    "relative_file": null,
+    "hash": "175f8aa43f46b437232056b3638736e1442ed57f",
+    "parent": "App\\Http\\Controllers\\Controller",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Controller": "App\\Http\\Controllers\\Controller",
+        "VerifiesEmails": "Illuminate\\Foundation\\Auth\\VerifiesEmails"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": {
+        "Illuminate\\Foundation\\Auth\\VerifiesEmails": "Illuminate\\Foundation\\Auth\\VerifiesEmails"
+    },
+    "properties": {
+        "redirectTo": {
+            "name": "redirectTo",
+            "line": 28,
+            "short_desc": "Where to redirect users after verification.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Scalar_String",
+                "value": "\/profile",
+                "attributes": {
+                    "startLine": 28,
+                    "endLine": 28,
+                    "kind": 1
+                }
+            },
+            "errors": []
+        }
+    },
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 35,
+            "short_desc": "Create a new controller instance.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "void",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

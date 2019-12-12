@@ -1,0 +1,395 @@
+{
+    "name": "App\\User",
+    "line": 13,
+    "short_desc": "User class with useful methods",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App",
+    "file": "C:\\dev\\inf3dlma\\GITHUB\\Fid-Arc\/app\\User.php",
+    "relative_file": null,
+    "hash": "798ed2818299a47618f788959c3491e58c1fd681",
+    "parent": "Illuminate\\Foundation\\Auth\\User",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "MustVerifyEmail": "Illuminate\\Contracts\\Auth\\MustVerifyEmail",
+        "Authenticatable": "Illuminate\\Foundation\\Auth\\User",
+        "Notifiable": "Illuminate\\Notifications\\Notifiable",
+        "HasApiTokens": "Laravel\\Passport\\HasApiTokens",
+        "HasRoles": "Spatie\\Permission\\Traits\\HasRoles",
+        "CanResetPassword": "Illuminate\\Auth\\Passwords\\CanResetPassword"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": {
+        "Spatie\\Permission\\Traits\\HasRoles": "Spatie\\Permission\\Traits\\HasRoles",
+        "Laravel\\Passport\\HasApiTokens": "Laravel\\Passport\\HasApiTokens",
+        "Illuminate\\Auth\\Passwords\\CanResetPassword": "Illuminate\\Auth\\Passwords\\CanResetPassword",
+        "Illuminate\\Notifications\\Notifiable": "Illuminate\\Notifications\\Notifiable"
+    },
+    "properties": {
+        "fillable": {
+            "name": "fillable",
+            "line": 40,
+            "short_desc": "The attributes that are mass assignable.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Expr_Array",
+                "items": [
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": null,
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "name",
+                            "attributes": {
+                                "startLine": 41,
+                                "endLine": 41,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 41,
+                            "endLine": 41
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": null,
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "lastname",
+                            "attributes": {
+                                "startLine": 41,
+                                "endLine": 41,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 41,
+                            "endLine": 41
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": null,
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "email",
+                            "attributes": {
+                                "startLine": 41,
+                                "endLine": 41,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 41,
+                            "endLine": 41
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": null,
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "password",
+                            "attributes": {
+                                "startLine": 41,
+                                "endLine": 41,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 41,
+                            "endLine": 41
+                        }
+                    }
+                ],
+                "attributes": {
+                    "startLine": 40,
+                    "endLine": 42,
+                    "kind": 2
+                }
+            },
+            "errors": []
+        },
+        "hidden": {
+            "name": "hidden",
+            "line": 49,
+            "short_desc": "The attributes that should be hidden for arrays.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Expr_Array",
+                "items": [
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": null,
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "password",
+                            "attributes": {
+                                "startLine": 50,
+                                "endLine": 50,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 50,
+                            "endLine": 50
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": null,
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "remember_token",
+                            "attributes": {
+                                "startLine": 50,
+                                "endLine": 50,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 50,
+                            "endLine": 50
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": null,
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "roles",
+                            "attributes": {
+                                "startLine": 50,
+                                "endLine": 50,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 50,
+                            "endLine": 50
+                        }
+                    }
+                ],
+                "attributes": {
+                    "startLine": 49,
+                    "endLine": 51,
+                    "kind": 2
+                }
+            },
+            "errors": []
+        },
+        "casts": {
+            "name": "casts",
+            "line": 58,
+            "short_desc": "The attributes that should be cast to native types.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Expr_Array",
+                "items": [
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Scalar_String",
+                            "value": "email_verified_at",
+                            "attributes": {
+                                "startLine": 59,
+                                "endLine": 59,
+                                "kind": 1
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "datetime",
+                            "attributes": {
+                                "startLine": 59,
+                                "endLine": 59,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 59,
+                            "endLine": 59
+                        }
+                    }
+                ],
+                "attributes": {
+                    "startLine": 58,
+                    "endLine": 60,
+                    "kind": 2
+                }
+            },
+            "errors": []
+        },
+        "appends": {
+            "name": "appends",
+            "line": 62,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Expr_Array",
+                "items": [
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": null,
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "role_names",
+                            "attributes": {
+                                "startLine": 63,
+                                "endLine": 63,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 63,
+                            "endLine": 63
+                        }
+                    },
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": null,
+                        "value": {
+                            "nodeType": "Scalar_String",
+                            "value": "company_data",
+                            "attributes": {
+                                "startLine": 64,
+                                "endLine": 64,
+                                "kind": 1
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 64,
+                            "endLine": 64
+                        }
+                    }
+                ],
+                "attributes": {
+                    "startLine": 62,
+                    "endLine": 65,
+                    "kind": 2
+                }
+            },
+            "errors": []
+        }
+    },
+    "methods": {
+        "companyAccount": {
+            "name": "companyAccount",
+            "line": 21,
+            "short_desc": "HasOne relationship to the company",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Object",
+                    false
+                ]
+            ],
+            "hint_desc": "relationship to the company",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "fidelityCards": {
+            "name": "fidelityCards",
+            "line": 30,
+            "short_desc": "BelongsToMany relationship to the company with pivot table",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Object",
+                    false
+                ]
+            ],
+            "hint_desc": "relationship to the company with pivot table",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getRoleNamesAttribute": {
+            "name": "getRoleNamesAttribute",
+            "line": 71,
+            "short_desc": "Return a string array with role names",
+            "long_desc": "",
+            "hint": [
+                [
+                    "String",
+                    true
+                ]
+            ],
+            "hint_desc": "return a string array with role names",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getCompanyDataAttribute": {
+            "name": "getCompanyDataAttribute",
+            "line": 76,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

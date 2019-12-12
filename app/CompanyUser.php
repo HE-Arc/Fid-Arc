@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 use Response;
 
+/**
+ * CompanyUser model
+ */
 class CompanyUser extends Pivot
 {
   const INITIAL_NUMBER_OF_POINTS = 1;

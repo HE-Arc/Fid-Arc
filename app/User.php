@@ -7,6 +7,9 @@ use Laravel\Passport\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Auth\Passwords\CanResetPassword;
 
+/**
+ * User class with useful methods
+ */
 class User extends Authenticatable
 {
     use HasRoles, HasApiTokens, CanResetPassword, Notifiable;
@@ -15,14 +18,15 @@ class User extends Authenticatable
      * HasOne relationship to the company
      * @return Object relationship to the company
      */
-    public function companyAccount()
+     public function company()
     {
       return $this->hasOne("App\Company");
     }
 
     /**
-     * BelongsToMany relationship to the company with pivot table
-     * @return Object relationship to the company with pivot table
+     * All the cards belonging to this user
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function fidelityCards()
     {
@@ -34,9 +38,8 @@ class User extends Authenticatable
      *
      * @var array
      */
-
     protected $fillable = [
-        'name', 'lastname', 'email', 'password',
+        'name', 'lastname', 'email', 'password', 'company'
     ];
 
     /**
@@ -44,7 +47,6 @@ class User extends Authenticatable
      *
      * @var array
      */
-
     protected $hidden = [
         'password', 'remember_token', 'roles'
     ];
@@ -56,23 +58,34 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'company' => 'json'
     ];
 
+    /**
+     * Append more information to the request
+     *
+     * @var array
+     */
     protected $appends = [
-        'role_names',
-        'company_data'
+        'role_names'
     ];
 
+    /**
+     * Add company to the JSON representation
+     *
+     * @var array
+     */
+    protected $with = [
+        'company'
+    ];
+
+    /**
+     * Return the roles of the current user
+     *
+     * @return \Illuminate\Support\Collection
+     */
     public function getRoleNamesAttribute()
     {
         return $this->getRoleNames();
-    }
-
-    public function getCompanyDataAttribute()
-    {
-        if($this->hasRole('company'))
-            return true; //TODO
-        else
-            return false; //TODO
     }
 }

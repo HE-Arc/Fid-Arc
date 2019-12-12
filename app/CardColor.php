@@ -4,6 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Card Color model 
+ */
 class CardColor extends Model
 {
     /**

@@ -2,84 +2,82 @@
 
 @section('content')
 
-    <div class="container">
-        <h1 class="display-3">Welcome on Fid-Arc.</h1>
-        <p class="lead">The future of fidelity cards. For clients and companies.</p>
+    <div id="main-page" class="container-fluid">
 
-        <div class="bd-example mt-3">
-            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="https://source.unsplash.com/pb_lF8VWaPU/1000x300" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="https://source.unsplash.com/pb_lF8VWaPU/1000x300" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="https://source.unsplash.com/pb_lF8VWaPU/1000x300" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                    </div>
+        <section id="callToAction">
+            <div class="container h-100">
+                <div class="h-100 d-flex flex-column justify-content-center align-items-start text-left">
+                    <h1 class="display-1">Scan and win!</h1>
+                    <p class="display-4">Discover our new app which allow you to earn points and redeem for prizes.</p>
+                    <p class="lead mt-5">
+                        <a class="btn btn-primary btn-lg" href="#" role="button">Download the app</a>
+                    </p>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-            </a>
-        </div>
+        </section>
 
-        <p class="h2 mt-5">Discover our advantages.</p>
+        <section id="partners">
+            <div id="mapPartners" style="height:500px; width:100%;"></div>
+            <div id="cardPartners" class="container py-5">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h1 class="display-3">Our partners</h1>
+                        <hr>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <div class="single-card">
+                            <div class="card-photo">
+                                <img src="https://images.unsplash.com/photo-1423784346385-c1d4dac9893a?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=533&fit=crop&ixid=eyJhcHBfaWQiOjF9" alt="">
+                            </div>
+                            <div class="card-content">
+                                <h3><a href="#">Mäder</a></h3>
+                                <ul class="card-meta">
+                                    <li><span class="ti-calendar"></span> <a href="#">Dec 01, 2019</a></li>
+                                </ul>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit nemo eaque expedita
+                                    aliquid dolorem repellat perferendis, facilis aut fugit, impedit.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="single-card">
+                            <div class="card-photo">
+                                <img src="https://images.unsplash.com/photo-1423784346385-c1d4dac9893a?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=533&fit=crop&ixid=eyJhcHBfaWQiOjF9" alt="">
+                            </div>
+                            <div class="card-content">
+                                <h3><a href="#">Walder Chocolaterie</a></h3>
+                                <ul class="card-meta">
+                                    <li><span class="ti-calendar"></span> <a href="#">Dec 01, 2019</a></li>
+                                </ul>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit nemo eaque expedita
+                                    aliquid dolorem repellat perferendis, facilis aut fugit, impedit.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="single-card">
+                            <div class="card-photo">
+                                <img src="https://images.unsplash.com/photo-1423784346385-c1d4dac9893a?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=533&fit=crop&ixid=eyJhcHBfaWQiOjF9" alt="">
+                            </div>
+                            <div class="card-content">
+                                <h3><a href="#">King Food</a></h3>
+                                <ul class="card-meta">
+                                    <li><span class="ti-calendar"></span> <a href="#">Dec 01, 2019</a></li>
+                                </ul>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit nemo eaque expedita
+                                    aliquid dolorem repellat perferendis, facilis aut fugit, impedit.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <div class="row mt-5 mb-5">
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://source.unsplash.com/pb_lF8VWaPU/800x200" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card with stretched link</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary stretched-link">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://source.unsplash.com/pb_lF8VWaPU/800x200" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card with stretched link</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary stretched-link">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://source.unsplash.com/pb_lF8VWaPU/800x200" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card with stretched link</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary stretched-link">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <section>
+
+        </section>
     </div>
 
 @endsection
