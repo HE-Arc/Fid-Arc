@@ -3,6 +3,9 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\CompanyUser;
 
+/**
+ * Company model with useful methods
+ */
 class Company extends Model
 {
   /**

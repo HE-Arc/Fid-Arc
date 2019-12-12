@@ -7,15 +7,20 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
+/**
+ * SendMail class, extends Mailable to build message with a view and datas
+ */
 class SendMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $data;
+    /**
+     * Private attribute who contains datas like company name or message to display
+     */
+    private $data;
 
     /**
      * Create a new message instance.
-     *
      * @return void
      */
     public function __construct($data)
@@ -24,8 +29,7 @@ class SendMail extends Mailable
     }
 
     /**
-     * Build the message.s
-     *
+     * Build the message
      * @return $this
      */
     public function build()

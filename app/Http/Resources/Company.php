@@ -16,13 +16,10 @@ class Company extends JsonResource
     public function toArray($request)
     {
         return [
-          //'id' => $this->id,
           'company_name' => $this->company_name,
           'company_description' => $this->company_description,
           'latitude' => $this->latitude,
           'longitude' => $this->longitude,
-          //'number_fidelity_points' => $this->number_fidelity_points,
-          //'card_color' => CardColor::find($this->card_color_id)
         ];
     }
 }
