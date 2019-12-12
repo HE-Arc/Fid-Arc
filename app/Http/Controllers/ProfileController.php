@@ -17,6 +17,10 @@ class ProfileController extends Controller
         $this->middleware('auth');
     }
 
+    /**
+     * Redirect to the user or the company profile
+     * @return Object redirect to the good profile
+     */
     public function index()
     {
       if(auth()->user()->hasRole('company'))

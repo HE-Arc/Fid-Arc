@@ -12,11 +12,10 @@ class User extends Authenticatable
     use HasRoles, HasApiTokens, CanResetPassword, Notifiable;
 
     /**
-     * The company account link to this user
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * HasOne relationship to the company
+     * @return Object relationship to the company
      */
-    public function company()
+     public function company()
     {
       return $this->hasOne("App\Company");
     }
