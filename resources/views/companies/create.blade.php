@@ -3,20 +3,13 @@
 @section('content')
 
     <div class="container">
-        <div id="createCompanyAccount" class="row justify-content-md-center">
-            <div class="col-12 col-sm-6 card p-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 card p-5">
                 <div class="text-center mb-5">
                     <h1>Create a company account</h1>
                 </div>
                 {{ Form::open(['url' => 'companies']) }}
                 <div id="companyRegisterPart1">
-                    <div class="form-group">
-                        {{ Form::label('email', 'E-mail address : ') }}
-                        {{ Form::email('email', old('email'), $errors->has('email') ? ['class'=>'is-invalid form-control'] : ['class' => 'form-control']) }}
-                        @error('email')
-                        <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
-                        @enderror
-                    </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             {{ Form::label('first_name', 'First name : ') }}
@@ -32,6 +25,14 @@
                             <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
                             @enderror
                         </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ Form::label('email', 'E-mail address : ') }}
+                        {{ Form::email('email', old('email'), $errors->has('email') ? ['class'=>'is-invalid form-control'] : ['class' => 'form-control']) }}
+                        @error('email')
+                        <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                        @enderror
                     </div>
 
                     <div class="form-group">

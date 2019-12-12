@@ -175,7 +175,8 @@ section#partners:before {
 COMPANY
  -----*/
 
-#createCompanyAccount, #login {
+/* Generic for form */
+.container .row.justify-content-center {
     margin-top: 150px;
 }
 
