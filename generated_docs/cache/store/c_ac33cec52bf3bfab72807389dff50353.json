@@ -1,0 +1,137 @@
+{
+    "name": "App\\Http\\Controllers\\CompanyUserController",
+    "line": 17,
+    "short_desc": "CompanyUserController",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\Http\\Controllers",
+    "file": "C:\\dev\\inf3dlma\\GITHUB\\Fid-Arc\/app\\Http\\Controllers\\CompanyUserController.php",
+    "relative_file": null,
+    "hash": "d4ce9223408a14eb6c77742dbfc13a3ee0ee2844",
+    "parent": "App\\Http\\Controllers\\Controller",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Request": "Illuminate\\Http\\Request",
+        "CompanyUser": "App\\CompanyUser",
+        "Company": "App\\Company",
+        "User": "App\\User",
+        "CompanyUserResource": "App\\Http\\Resources\\CompanyUser",
+        "Auth": "Illuminate\\Support\\Facades\\Auth",
+        "Validator": "Illuminate\\Support\\Facades\\Validator",
+        "Response": "Response"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "addFidelityPoint": {
+            "name": "addFidelityPoint",
+            "line": 26,
+            "short_desc": "Add a fidelity point to user for the connect company. Validate the POST parameter.",
+            "long_desc": "If the relation between the user and company is create, add a point, otherwise create the relation and a point",
+            "hint": [
+                [
+                    "Object",
+                    false
+                ]
+            ],
+            "hint_desc": "return a http status and a http code",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "request": {
+                    "name": "request",
+                    "line": 26,
+                    "short_desc": "Post request",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Illuminate\\Http\\Request",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "Illuminate",
+                            "Http",
+                            "Request"
+                        ],
+                        "attributes": {
+                            "startLine": 26,
+                            "endLine": 26
+                        }
+                    },
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getCardPoints": {
+            "name": "getCardPoints",
+            "line": 53,
+            "short_desc": "Get the number of fidelity point between the user and the company.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Object",
+                    false
+                ]
+            ],
+            "hint_desc": "return json of number_of_points",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "scanned_user_id": {
+                    "name": "scanned_user_id",
+                    "line": 53,
+                    "short_desc": "user id",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "Integer",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "getFidelityCards": {
+            "name": "getFidelityCards",
+            "line": 70,
+            "short_desc": "Get all fidelity card for connect user",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Object",
+                    false
+                ]
+            ],
+            "hint_desc": "fidelity cards for a user",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

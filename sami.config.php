@@ -19,6 +19,6 @@ $iterator = Finder::create()
 return new Sami($iterator,[
 'theme' => 'default',
 'title' => 'My App',
-'build_dir' => __DIR__ . '/_docs/build',
-'cache_dir' => __DIR__ . '/_docs/cache',
+'build_dir' => __DIR__ . '/generated_docs/build',
+'cache_dir' => __DIR__ . '/generated_docs/cache',
 ]);
