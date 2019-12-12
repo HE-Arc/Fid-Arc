@@ -178,6 +178,7 @@ COMPANY
 /* Generic for form */
 .container .row.justify-content-center, #userProfile, #companyProfile {
     margin-top: 150px;
+    margin-bottom: 150px;
 }
 
 form label {
@@ -246,6 +247,50 @@ form label {
 .single-card .card-meta li {
     display: inline-block;
     margin-right: 15px;
+}
+
+/*----
+FOOTER
+---- */
+
+.footer {
+    background: #202426;
+    color: #93A8AC;
+}
+
+.footer .links ul {
+    list-style-type: none;
+}
+
+.footer .links li a {
+    color: #93A8AC;
+    transition: color .2s;
+}
+
+.footer .links li a:hover {
+    text-decoration: none;
+    color: #44CCFF;
+}
+
+.footer .about-company i {
+    font-size: 25px;
+}
+
+.footer .about-company a {
+    color: #93A8AC;
+    transition: color .2s;
+}
+
+.footer .about-company a:hover {
+    color: #4180CB;
+}
+
+.footer .location i {
+    font-size: 18px;
+}
+
+.footer .copyright p {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 @media only screen and (max-width: 767px) {
