@@ -1,0 +1,84 @@
+{
+    "name": "App\\Http\\Middleware\\TrustProxies",
+    "line": 8,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\Http\\Middleware",
+    "file": "C:\\dev\\inf3dlma\\GITHUB\\Fid-Arc\/app\\Http\\Middleware\\TrustProxies.php",
+    "relative_file": null,
+    "hash": "46021e62b6c9ee7ab73d25103ffad348dff10e39",
+    "parent": "Fideloper\\Proxy\\TrustProxies",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Middleware": "Fideloper\\Proxy\\TrustProxies",
+        "Request": "Illuminate\\Http\\Request"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "proxies": {
+            "name": "proxies",
+            "line": 15,
+            "short_desc": "The trusted proxies for this application.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ],
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "headers": {
+            "name": "headers",
+            "line": 22,
+            "short_desc": "The headers that should be used to detect proxies.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "int",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Expr_ClassConstFetch",
+                "class": {
+                    "nodeType": "Name_FullyQualified",
+                    "parts": [
+                        "Illuminate",
+                        "Http",
+                        "Request"
+                    ],
+                    "attributes": {
+                        "startLine": 22,
+                        "endLine": 22
+                    }
+                },
+                "name": "HEADER_X_FORWARDED_ALL",
+                "attributes": {
+                    "startLine": 22,
+                    "endLine": 22
+                }
+            },
+            "errors": []
+        }
+    },
+    "methods": [],
+    "constants": []
+}

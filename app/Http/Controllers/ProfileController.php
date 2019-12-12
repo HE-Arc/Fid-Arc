@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 
+/**
+ * ProfileController
+ */
 class ProfileController extends Controller
 {
     /**
@@ -23,13 +26,13 @@ class ProfileController extends Controller
      */
     public function index()
     {
-      if(auth()->user()->hasRole('company'))
-      {
-        return redirect('/companyProfile');
-      }
-      else
-      {
-        return redirect('/userProfile');
-      }
+        if(auth()->user()->hasRole('company'))
+        {
+          return redirect('/companyProfile');
+        }
+        else
+        {
+          return redirect('/userProfile');
+        }
     }
 }

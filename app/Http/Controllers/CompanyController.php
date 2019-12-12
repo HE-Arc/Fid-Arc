@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 use Auth;
 
+/**
+ * CompanyController
+ */
 class CompanyController extends Controller
 {
   /**
@@ -75,6 +78,10 @@ class CompanyController extends Controller
     return view('companies.profile', ['userInfos' => $user, 'companyInfos' => $companyInfos, 'cardColor' => $cardColor]);
   }
 
+  /**
+   * Function who validate the request, form the data, send an email to each users
+   * @return back to the precedent page with a success message
+   */
   public function sendMail(Request $request)
   {
     $this->validate($request, [
