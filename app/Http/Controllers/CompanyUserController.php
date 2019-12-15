@@ -37,7 +37,7 @@ class CompanyUserController extends Controller
       //verify if the user is a company
       if(auth()->user()->hasRole('company'))
       {
-        $company = auth()->user()->companyAccount()->get()[0];
+        $company = auth()->user()->company()->get()[0];
 
         $http_response = CompanyUser::addPointOrCreateRelation($scanned_user_id, $company);
       }
@@ -60,7 +60,7 @@ class CompanyUserController extends Controller
    */
   public function getCardPoints($scanned_user_id)
   {
-    $company_id = auth()->user()->companyAccount()->get()[0]['id'];
+    $company_id = auth()->user()->company()->get()[0]['id'];
     $cu = CompanyUser::isRelationExsist($scanned_user_id, $company_id);
     $number_of_points = -1;
 
@@ -88,7 +88,7 @@ class CompanyUserController extends Controller
         //verify if the user is a company
         if(auth()->user()->hasRole('company'))
         {
-          $company = auth()->user()->companyAccount()->get()[0];
+          $company = auth()->user()->company()->get()[0];
           $cu = CompanyUser::isRelationExsist($scanned_user_id, $company->id);
 
           //verifify if the relation exist
