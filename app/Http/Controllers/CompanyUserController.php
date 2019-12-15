@@ -43,12 +43,12 @@ class CompanyUserController extends Controller
       }
       else
       {
-        array_push($http_response, ["status" => "The user must to be a company."], 401);
+        array_push($http_response, ["status" => "The user must to be a company.", "number_of_points"=> -1], 401);
       }
     }
     else
     {
-      array_push($http_response, ["status" => "Please send the correct parameter."], 401);
+      array_push($http_response, ["status" => "Please send the correct parameter.", "number_of_points"=> -1], 401);
     }
     return response($http_response[0], $http_response[1])->header('Content-Type', 'text/plain');
   }
@@ -91,7 +91,7 @@ class CompanyUserController extends Controller
           $company = auth()->user()->companyAccount()->get()[0];
           $cu = CompanyUser::isRelationExsist($scanned_user_id, $company->id);
 
-          //verifify if the realtion exist
+          //verifify if the relation exist
           if(!$cu)
           {
             array_push($http_response, ["status" => "the relation between the user and the company doesn't exist."], 401);
@@ -100,7 +100,7 @@ class CompanyUserController extends Controller
           {
             $cu->has_reward = 0;
             $cu->save();
-            array_push($http_response, ["status" => "User got his reward"], 202);
+            array_push($http_response, ["status" => "User got his reward."], 202);
           }
         }
         else
