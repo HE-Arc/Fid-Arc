@@ -21,13 +21,20 @@ fetch('fidelityCards').then(
                     html += "<div class='card-body'>"
                     html += "<h3 class='card-title mb-0'>" + element.company_name + "</h3>"
                     html += "<p><strong>" + element.message_to_user + "</strong></p>"
-                    html += "<p class='mb-0'>Your fidelity points is <strong>" + element.current_number_of_points + "/" + element.total_number_of_points +"</strong></p>"
+                    if(!element.has_reward)
+                    {
+                      html += "<p class='mb-0'>Your fidelity points is <strong>" + element.current_number_of_points + "/" + element.total_number_of_points +"</strong></p>"
+                    }
+                    else
+                    {
+                      html += "<p class='mb-0'><strong>You can reclaim your reward ! </strong></p>"
+                    }
                     html += "</div>"
                     html += "</div>"
                     document.getElementById("fidelitycards").innerHTML += html
                 })
             }
-            
+
         })
     }
 ).catch(function(err) {
