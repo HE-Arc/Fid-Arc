@@ -21,12 +21,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::middleware('auth:api')->post('addFidelityPoint', 'CompanyUserController@addFidelityPoint')->name('addFidelityPoint');
 
-Route::get('getCardPoints/{scanned_user_id}', 'CompanyUserController@getCardPoints')->name('getCardPoints');
+Route::middleware('auth:api')->get('getCardPoints/{scanned_user_id}', 'CompanyUserController@getCardPoints')->name('getCardPoints');
 
 Route::get('companies', function(){
   return CompanyResource::collection(Company::all());
 });
 
+Route::middleware('auth:api')->post('userGotHisReward', 'CompanyUserController@userGotHisReward')->name('userGotHisReward');
 
-
-Route::middleware('auth:api')->get('/fidelityCards', 'CompanyUserController@getFidelityCards')->name('fidelityCards');
+Route::middleware('auth:api')->get('fidelityCards', 'CompanyUserController@getFidelityCards')->name('fidelityCards');

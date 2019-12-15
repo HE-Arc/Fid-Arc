@@ -1,0 +1,73 @@
+{
+    "name": "App\\Providers\\AuthServiceProvider",
+    "line": 9,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\Providers",
+    "file": "C:\\dev\\inf3dlma\\GITHUB\\Fid-Arc\/app\\Providers\\AuthServiceProvider.php",
+    "relative_file": null,
+    "hash": "161577383898dff674cd476938036c0126324f14",
+    "parent": "Illuminate\\Foundation\\Support\\Providers\\AuthServiceProvider",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "ServiceProvider": "Illuminate\\Foundation\\Support\\Providers\\AuthServiceProvider",
+        "Gate": "Illuminate\\Support\\Facades\\Gate",
+        "Passport": "Laravel\\Passport\\Passport"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "policies": {
+            "name": "policies",
+            "line": 16,
+            "short_desc": "The policy mappings for the application.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Expr_Array",
+                "items": [],
+                "attributes": {
+                    "startLine": 16,
+                    "endLine": 18,
+                    "kind": 2
+                }
+            },
+            "errors": []
+        }
+    },
+    "methods": {
+        "boot": {
+            "name": "boot",
+            "line": 25,
+            "short_desc": "Register any authentication \/ authorization services.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "void",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

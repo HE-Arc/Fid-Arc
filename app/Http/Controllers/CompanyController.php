@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 use Auth;
 
+/**
+ * CompanyController
+ */
 class CompanyController extends Controller
 {
   /**
@@ -50,7 +53,7 @@ class CompanyController extends Controller
 
     $user->assignRole('company');
 
-    $company = Company::create([
+    Company::create([
       'company_name' => $arrayResult['company_name'],
       'company_description' => $arrayResult['company_description'],
       'latitude' => $arrayResult['latitude'],
@@ -70,11 +73,15 @@ class CompanyController extends Controller
   public function profile()
   {
     $user = auth()->user();
-    $companyInfos = $user->companyAccount;
+    $companyInfos = $user->company;
     $cardColor = CardColor::findOrFail($companyInfos['card_color_id'])['color'];
     return view('companies.profile', ['userInfos' => $user, 'companyInfos' => $companyInfos, 'cardColor' => $cardColor]);
   }
 
+  /**
+   * Function who validate the request, form the data, send an email to each users
+   * @return back to the precedent page with a success message
+   */
   public function sendMail(Request $request)
   {
     $this->validate($request, [

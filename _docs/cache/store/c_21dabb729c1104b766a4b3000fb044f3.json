@@ -1,0 +1,144 @@
+{
+    "name": "App\\Providers\\EventServiceProvider",
+    "line": 10,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\Providers",
+    "file": "C:\\dev\\inf3dlma\\GITHUB\\Fid-Arc\/app\\Providers\\EventServiceProvider.php",
+    "relative_file": null,
+    "hash": "c105b926855e11ee1643a7c95a56754ff1b3c0b6",
+    "parent": "Illuminate\\Foundation\\Support\\Providers\\EventServiceProvider",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Registered": "Illuminate\\Auth\\Events\\Registered",
+        "SendEmailVerificationNotification": "Illuminate\\Auth\\Listeners\\SendEmailVerificationNotification",
+        "ServiceProvider": "Illuminate\\Foundation\\Support\\Providers\\EventServiceProvider",
+        "Event": "Illuminate\\Support\\Facades\\Event"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "listen": {
+            "name": "listen",
+            "line": 17,
+            "short_desc": "The event listener mappings for the application.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Expr_Array",
+                "items": [
+                    {
+                        "nodeType": "Expr_ArrayItem",
+                        "key": {
+                            "nodeType": "Expr_ClassConstFetch",
+                            "class": {
+                                "nodeType": "Name_FullyQualified",
+                                "parts": [
+                                    "Illuminate",
+                                    "Auth",
+                                    "Events",
+                                    "Registered"
+                                ],
+                                "attributes": {
+                                    "startLine": 18,
+                                    "endLine": 18
+                                }
+                            },
+                            "name": "class",
+                            "attributes": {
+                                "startLine": 18,
+                                "endLine": 18
+                            }
+                        },
+                        "value": {
+                            "nodeType": "Expr_Array",
+                            "items": [
+                                {
+                                    "nodeType": "Expr_ArrayItem",
+                                    "key": null,
+                                    "value": {
+                                        "nodeType": "Expr_ClassConstFetch",
+                                        "class": {
+                                            "nodeType": "Name_FullyQualified",
+                                            "parts": [
+                                                "Illuminate",
+                                                "Auth",
+                                                "Listeners",
+                                                "SendEmailVerificationNotification"
+                                            ],
+                                            "attributes": {
+                                                "startLine": 19,
+                                                "endLine": 19
+                                            }
+                                        },
+                                        "name": "class",
+                                        "attributes": {
+                                            "startLine": 19,
+                                            "endLine": 19
+                                        }
+                                    },
+                                    "byRef": false,
+                                    "attributes": {
+                                        "startLine": 19,
+                                        "endLine": 19
+                                    }
+                                }
+                            ],
+                            "attributes": {
+                                "startLine": 18,
+                                "endLine": 20,
+                                "kind": 2
+                            }
+                        },
+                        "byRef": false,
+                        "attributes": {
+                            "startLine": 18,
+                            "endLine": 20
+                        }
+                    }
+                ],
+                "attributes": {
+                    "startLine": 17,
+                    "endLine": 21,
+                    "kind": 2
+                }
+            },
+            "errors": []
+        }
+    },
+    "methods": {
+        "boot": {
+            "name": "boot",
+            "line": 28,
+            "short_desc": "Register any events for your application.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "void",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

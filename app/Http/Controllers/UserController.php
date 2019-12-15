@@ -7,12 +7,16 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\CardColor;
 
+/**
+ * UserController
+ */
 class UserController extends Controller
 {
     public function __construct__()
     {
         $this->middleware('auth');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +25,6 @@ class UserController extends Controller
     public function profile()
     {
         $user = auth()->user();
-
         return view('user.profile', ['user' => $user]);
     }
 }
