@@ -82,7 +82,6 @@ class CompanyUser extends Pivot
                 'is_subscribed_to_emails' => 1,
                 'has_reward' => 0
             ]);
-            //TODO send notif for the user for email
             array_push($http_response, ["status" =>"The relation between user and company is created.", "number_of_points"=> CompanyUser::INITIAL_NUMBER_OF_POINTS], 201);
             return $http_response;
         } else {

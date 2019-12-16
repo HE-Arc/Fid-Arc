@@ -91,7 +91,7 @@ class CompanyUserController extends Controller
           $company = auth()->user()->company()->get()[0];
           $cu = CompanyUser::isRelationExsist($scanned_user_id, $company->id);
 
-          //verifify if the realtion exist
+          //verifify if the relation exist
           if(!$cu)
           {
             array_push($http_response, ["status" => "the relation between the user and the company doesn't exist."], 401);
@@ -100,7 +100,7 @@ class CompanyUserController extends Controller
           {
             $cu->has_reward = 0;
             $cu->save();
-            array_push($http_response, ["status" => "User got his reward"], 202);
+            array_push($http_response, ["status" => "User got his reward."], 202);
           }
         }
         else
