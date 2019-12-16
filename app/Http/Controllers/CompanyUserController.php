@@ -43,12 +43,12 @@ class CompanyUserController extends Controller
       }
       else
       {
-        array_push($http_response, ["status" => "The user must to be a company.", "number_of_points"=> -1], 401);
+        array_push($http_response, ["status" => "The user must to be a company.", "number_of_points" => -1], 401);
       }
     }
     else
     {
-      array_push($http_response, ["status" => "Please send the correct parameter.", "number_of_points"=> -1], 401);
+      array_push($http_response, ["status" => "Please send the correct parameter.", "number_of_points" => -1], 401);
     }
     return response($http_response[0], $http_response[1])->header('Content-Type', 'text/plain');
   }
