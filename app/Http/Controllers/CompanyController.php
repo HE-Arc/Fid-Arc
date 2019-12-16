@@ -17,15 +17,6 @@ use Auth;
  */
 class CompanyController extends Controller
 {
-  /**
-   * Display the about company page
-   * @return Object about company view
-   */
-  public function index()
-  {
-    $lastCompanies = Company::orderBy('created_at','desc')->take(3)->get();
-    return view('companies.index', ['lastCompanies' => $lastCompanies]);
-  }
 
   /**
    * Display the create company form
