@@ -8,7 +8,7 @@
                 <div class="text-center mb-5">
                     <h1>Create a company account</h1>
                 </div>
-                {{ Form::open(['url' => 'companies']) }}
+                {{ Form::open(['url' => 'companies', 'id' => 'createCompanyAccount']) }}
                 <div id="companyRegisterPart1">
                     <div class="form-row">
                         <div class="form-group col-md-6">
