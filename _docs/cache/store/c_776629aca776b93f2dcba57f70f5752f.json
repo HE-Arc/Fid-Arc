@@ -1,0 +1,190 @@
+{
+    "name": "App\\Http\\Controllers\\CompanyController",
+    "line": 18,
+    "short_desc": "CompanyController",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\Http\\Controllers",
+    "file": "C:\\dev\\inf3dlma\\GITHUB\\Fid-Arc\/app\\Http\\Controllers\\CompanyController.php",
+    "relative_file": null,
+    "hash": "e34b6145b1482a479ef2e8a50bd31a3f2cdb542e",
+    "parent": "App\\Http\\Controllers\\Controller",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "CompanyCreateRequest": "App\\Http\\Requests\\CompanyCreateRequest",
+        "Request": "Illuminate\\Http\\Request",
+        "Hash": "Illuminate\\Support\\Facades\\Hash",
+        "User": "App\\User",
+        "Company": "App\\Company",
+        "CardColor": "App\\CardColor",
+        "SendMail": "App\\Mail\\SendMail",
+        "Mail": "Illuminate\\Support\\Facades\\Mail",
+        "DB": "Illuminate\\Support\\Facades\\DB",
+        "Model": "Illuminate\\Database\\Eloquent\\Model",
+        "Auth": "Auth"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "index": {
+            "name": "index",
+            "line": 24,
+            "short_desc": "Display the about company page",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Object",
+                    false
+                ]
+            ],
+            "hint_desc": "about company view",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "create": {
+            "name": "create",
+            "line": 34,
+            "short_desc": "Display the create company form",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Object",
+                    false
+                ]
+            ],
+            "hint_desc": "create company view",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "store": {
+            "name": "store",
+            "line": 44,
+            "short_desc": "Store the user from the POST request",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Object",
+                    false
+                ]
+            ],
+            "hint_desc": "redirection to profile page",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "request": {
+                    "name": "request",
+                    "line": 44,
+                    "short_desc": "post request from the company create form",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\App\\Http\\Requests\\CompanyCreateRequest",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "App",
+                            "Http",
+                            "Requests",
+                            "CompanyCreateRequest"
+                        ],
+                        "attributes": {
+                            "startLine": 44,
+                            "endLine": 44
+                        }
+                    },
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "profile": {
+            "name": "profile",
+            "line": 73,
+            "short_desc": "Display the company profile page",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Object",
+                    false
+                ]
+            ],
+            "hint_desc": "company profile view",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "sendMail": {
+            "name": "sendMail",
+            "line": 85,
+            "short_desc": "Function who validate the request, form the data, send an email to each users",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\App\\Http\\Controllers\\back",
+                    false
+                ]
+            ],
+            "hint_desc": "to the precedent page with a success message",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "request": {
+                    "name": "request",
+                    "line": 85,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Illuminate\\Http\\Request",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "Illuminate",
+                            "Http",
+                            "Request"
+                        ],
+                        "attributes": {
+                            "startLine": 85,
+                            "endLine": 85
+                        }
+                    },
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}
