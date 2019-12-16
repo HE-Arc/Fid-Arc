@@ -61,7 +61,7 @@ function toggleCompanyFormPage(startId, endId, checkField, sendForm = false) {
             Swal.fire({
                 type: 'error',
                 title: 'Error...',
-                text: 'Please input all fileds!'
+                text: 'Please input all fds!'
             })
         }
     } else {//if the page change does not require verification, such as a rollback for example
