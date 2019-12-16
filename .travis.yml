@@ -21,6 +21,7 @@ before_script:
   - php artisan key:generate
   - php artisan migrate --no-interaction -vvv
   - php artisan passport:keys
+  - php artisan db:seed
 
 script:
   - vendor/bin/phpunit
