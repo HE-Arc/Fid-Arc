@@ -22,7 +22,7 @@ Route::middleware ('auth', 'verified')->group (function () {
   Route::get('/companyProfile', 'CompanyController@profile')->name('companyProfile');
 });
 
-Route::resource('companies', 'CompanyController')->only(['create', 'store', 'show', 'index']);
+Route::resource('companies', 'CompanyController')->only(['create', 'store', 'show']);
 Route::post('/send_mail', 'CompanyController@sendMail')->name('sendmail');
 Auth::routes();
 

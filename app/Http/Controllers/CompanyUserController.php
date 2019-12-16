@@ -88,7 +88,7 @@ class CompanyUserController extends Controller
         //verify if the user is a company
         if(auth()->user()->hasRole('company'))
         {
-          $company = auth()->user()->company->get()[0];
+          $company = auth()->user()->company()->get()[0];
           $cu = CompanyUser::isRelationExsist($scanned_user_id, $company->id);
 
           //verifify if the realtion exist
