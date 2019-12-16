@@ -95,7 +95,7 @@ class CompanyController extends Controller
     );
 
     // Get all users subscribed to mail to a company
-    $users = auth()->user()->companyAccount->get()[0]->subscribedUser()->get();
+    $users = auth()->user()->company()->get()[0]->subscribedUser()->where('is_subscribed_to_emails', 1)->get();
 
     foreach($users as $user){
       Mail::to($user['email'])->send((new SendMail($data))->build());
