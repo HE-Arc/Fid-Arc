@@ -31,14 +31,19 @@ function toggleCompanyFormPage(startId, endId, checkField, sendForm = false) {
     if (checkField) {
         let isFieldOk = true;
 
+        let name = '#companyRegisterPart' + startId;
+        let fields = document.querySelectorAll(name + ' input, ' + name + ' textarea');
+
+        console.log(fields);
+
         //browse all childrens of the subpage
-        for (let i = 0; i < startDiv.children.length; i++) {
-            let input = startDiv.children[i]
+        for (let i = 0; i < fields.length; i++) {
+            let input = fields[i];
 
             //if the children are inputs or textarea
-            if (input.nodeName == 'INPUT' || input.nodeName == 'TEXTAREA') {
+            if (input.nodeName === 'INPUT' || input.nodeName === 'TEXTAREA') {
                 //check if the field is null or not
-                if (input.value == "" || input.value == null) {
+                if (input.value === "" || input.value == null) {
                     isFieldOk = false;
                 }
             }
@@ -50,13 +55,13 @@ function toggleCompanyFormPage(startId, endId, checkField, sendForm = false) {
             startDiv.style.display = 'none'
             endDiv.style.display = 'block'
             if (sendForm) {
-                document.querySelector('#createCompanyAccount form').submit();
+                document.querySelector('#createCompanyAccount').submit();
             }
         } else {
             Swal.fire({
                 type: 'error',
                 title: 'Error...',
-                text: 'Please input all fileds!'
+                text: 'Please input all fds!'
             })
         }
     } else {//if the page change does not require verification, such as a rollback for example
