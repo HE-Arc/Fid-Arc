@@ -1,6 +1,7 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
+
 use App\Company;
 use App\CardColor;
 use Faker\Generator as Faker;
@@ -18,7 +19,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Company::class, function (Faker $faker) {
 
-    $idsColor = CardColor::where('id' ,'>' ,0)->pluck('id')->toArray();
+    $idsColor = CardColor::where('id', '>', 0)->pluck('id')->toArray();
 
     return [
         'company_name' => $faker->company,

@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Http\Requests;
+
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\DB;
 
@@ -22,7 +24,7 @@ class CompanyCreateRequest extends FormRequest
      */
     public function rules()
     {
-      $card_colors_id = DB::table("card_colors")->pluck("id")->toArray();
+        $card_colors_id = DB::table("card_colors")->pluck("id")->toArray();
         return [
             'email' => 'required|email|unique:users',
             'first_name' => 'required|min:3|max:40|alpha',
@@ -33,7 +35,7 @@ class CompanyCreateRequest extends FormRequest
             'latitude' => 'required|numeric',
             'longitude' => 'required|numeric',
             'number_fidelity_points' => 'required|integer|between:1,20',
-            'card_color' => 'required|in:'.implode($card_colors_id, ','),
+            'card_color' => 'required|in:' . implode($card_colors_id, ','),
             'message_to_user' => 'required|min:3|max:40'
         ];
     }

@@ -91,7 +91,8 @@
                     <h2>Heading</h2>
                     <p class="pr-5 text-white-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac
                         ante mollis quam tristique convallis </p>
-                    <p><a href="#"><i class="fab fa-facebook-square mr-1"></i></a><a href="#"><i class="fab fa-linkedin"></i></a></p>
+                    <p><a href="#"><i class="fab fa-facebook-square mr-1"></i></a><a href="#"><i
+                                    class="fab fa-linkedin"></i></a></p>
                 </div>
                 <div class="col-lg-3 col-xs-12 links">
                     <h4 class="mt-lg-0 mt-sm-3">Links</h4>

@@ -58,7 +58,8 @@
                 </div>
                 <div id="companyRegisterPart2" style="display:none;">
                     <div class="form-group">
-                        <button href="#" class="btn btn-primary btn-block" onclick="toggleCompanyFormPage(2,1,false); return false;">
+                        <button href="#" class="btn btn-primary btn-block"
+                                onclick="toggleCompanyFormPage(2,1,false); return false;">
                             Return
                         </button>
                     </div>
@@ -96,7 +97,8 @@
                 </div>
                 <div id="companyRegisterPart3" style="display:none;">
                     <div class="form-group">
-                        <button href="#" class="btn btn-primary btn-block" onclick="toggleCompanyFormPage(3,2,false); return false;">
+                        <button href="#" class="btn btn-primary btn-block"
+                                onclick="toggleCompanyFormPage(3,2,false); return false;">
                             Return
                         </button>
                     </div>
@@ -128,7 +130,9 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <button href="#" id="btnNextStep3" class="btn btn-dark btn-block" onclick="toggleCompanyFormPage(3,3,true,true); return false;">Finalize your account (3/3)
+                        <button href="#" id="btnNextStep3" class="btn btn-dark btn-block"
+                                onclick="toggleCompanyFormPage(3,3,true,true); return false;">Finalize your account
+                            (3/3)
                         </button>
                     </div>
                 </div>

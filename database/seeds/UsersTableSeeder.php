@@ -29,7 +29,7 @@ class UsersTableSeeder extends Seeder
 
         \App\User::find($idClientTest)->assignRole('client');
 
-        factory('App\User', 10)->create()->each(function($user){
+        factory('App\User', 10)->create()->each(function ($user) {
             $role = array_rand(self::$roles);
             $user->assignRole(self::$roles[$role]);
 

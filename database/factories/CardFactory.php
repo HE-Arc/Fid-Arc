@@ -20,8 +20,8 @@ use Faker\Generator as Faker;
 
 $factory->define(CompanyUser::class, function (Faker $faker) {
 
-    $idsUser = User::role('client')->where('id' ,'>' ,0)->pluck('id')->toArray();
-    $idsCompany = Company::where('id' ,'>' ,0)->pluck('id')->toArray();
+    $idsUser = User::role('client')->where('id', '>', 0)->pluck('id')->toArray();
+    $idsCompany = Company::where('id', '>', 0)->pluck('id')->toArray();
 
     return [
         'user_id' => $idsUser[array_rand($idsUser, 1)],

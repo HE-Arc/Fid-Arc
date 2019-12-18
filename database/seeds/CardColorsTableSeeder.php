@@ -12,11 +12,11 @@ class CardColorsTableSeeder extends Seeder
     public function run()
     {
         DB::table('card_colors')->insert([
-          ['color' => 'red'],
-          ['color' => 'blue'],
-          ['color' => 'green'],
-          ['color' => 'yellow'],
-          ['color' => 'black'],
-          ['color' => 'white']]);
+            ['color' => 'red'],
+            ['color' => 'blue'],
+            ['color' => 'green'],
+            ['color' => 'yellow'],
+            ['color' => 'black'],
+            ['color' => 'white']]);
     }
 }

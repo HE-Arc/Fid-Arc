@@ -26,13 +26,10 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        if(auth()->user()->hasRole('company'))
-        {
-          return redirect('/companyProfile');
-        }
-        else
-        {
-          return redirect('/userProfile');
+        if (auth()->user()->hasRole('company')) {
+            return redirect('/companyProfile');
+        } else {
+            return redirect('/userProfile');
         }
     }
 }

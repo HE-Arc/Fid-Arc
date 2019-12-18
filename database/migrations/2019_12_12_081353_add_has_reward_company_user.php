@@ -13,8 +13,8 @@ class AddHasRewardCompanyUser extends Migration
      */
     public function up()
     {
-        Schema::table('company_user', function($table){
-          $table->boolean('has_reward')->default(0);
+        Schema::table('company_user', function ($table) {
+            $table->boolean('has_reward')->default(0);
         });
     }
 
@@ -25,8 +25,8 @@ class AddHasRewardCompanyUser extends Migration
      */
     public function down()
     {
-      Schema::table('company_user', function($table){
-        $table->dropColumn('has_reward');
-      });
+        Schema::table('company_user', function ($table) {
+            $table->dropColumn('has_reward');
+        });
     }
 }

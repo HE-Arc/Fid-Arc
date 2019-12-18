@@ -9,6 +9,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 use App\Http\Resources\UserCollection;
 use App\User;
 
@@ -16,10 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware ('auth', 'verified')->group (function () {
-  Route::get('/profile', 'ProfileController@index')->name('profile');
-  Route::get('/userProfile', 'UserController@profile')->name('userProfile');
-  Route::get('/companyProfile', 'CompanyController@profile')->name('companyProfile');
+Route::middleware('auth', 'verified')->group(function () {
+    Route::get('/profile', 'ProfileController@index')->name('profile');
+    Route::get('/userProfile', 'UserController@profile')->name('userProfile');
+    Route::get('/companyProfile', 'CompanyController@profile')->name('companyProfile');
 });
 
 Route::resource('companies', 'CompanyController')->only(['create', 'store', 'show']);

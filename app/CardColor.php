@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Card Color model 
+ * Card Color model
  */
 class CardColor extends Model
 {
@@ -15,7 +15,7 @@ class CardColor extends Model
      */
     public function companies()
     {
-      return $this->hasMany('App\Company');
+        return $this->hasMany('App\Company');
     }
 
     /**
