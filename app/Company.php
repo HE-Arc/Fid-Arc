@@ -1,5 +1,7 @@
 <?php
+
 namespace App;
+
 use Illuminate\Database\Eloquent\Model;
 use App\CompanyUser;
 
@@ -8,13 +10,13 @@ use App\CompanyUser;
  */
 class Company extends Model
 {
-  /**
-   * HasOne relationship to the user
-   * @return Object relationship to the user
-   */
+    /**
+     * HasOne relationship to the user
+     * @return Object relationship to the user
+     */
     public function userAccount()
     {
-      return $this->hasOne("App\User");
+        return $this->hasOne("App\User");
     }
 
     /**
@@ -23,7 +25,7 @@ class Company extends Model
      */
     public function subscribedUser()
     {
-      return $this->belongsToMany("App\User")->using('App\CompanyUser')->withPivot('number_of_points');
+        return $this->belongsToMany("App\User")->using('App\CompanyUser')->withPivot('number_of_points');
     }
 
     /**
@@ -32,8 +34,9 @@ class Company extends Model
      */
     public function cardColor()
     {
-      return $this->belongsTo('App\CardColor');
+        return $this->belongsTo('App\CardColor');
     }
+
     /**
      * The attributes that should be hidden for arrays.
      *

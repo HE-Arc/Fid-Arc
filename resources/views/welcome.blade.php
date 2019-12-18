@@ -29,7 +29,8 @@
                     <div class="col-12 col-md-4">
                         <div class="single-card">
                             <div class="card-photo">
-                                <img src="https://images.unsplash.com/photo-1423784346385-c1d4dac9893a?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=533&fit=crop&ixid=eyJhcHBfaWQiOjF9" alt="">
+                                <img src="https://images.unsplash.com/photo-1423784346385-c1d4dac9893a?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=533&fit=crop&ixid=eyJhcHBfaWQiOjF9"
+                                     alt="">
                             </div>
                             <div class="card-content">
                                 <h3><a href="#">Mäder</a></h3>
@@ -44,7 +45,8 @@
                     <div class="col-12 col-md-4">
                         <div class="single-card">
                             <div class="card-photo">
-                                <img src="https://images.unsplash.com/photo-1423784346385-c1d4dac9893a?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=533&fit=crop&ixid=eyJhcHBfaWQiOjF9" alt="">
+                                <img src="https://images.unsplash.com/photo-1423784346385-c1d4dac9893a?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=533&fit=crop&ixid=eyJhcHBfaWQiOjF9"
+                                     alt="">
                             </div>
                             <div class="card-content">
                                 <h3><a href="#">Walder Chocolaterie</a></h3>
@@ -59,7 +61,8 @@
                     <div class="col-12 col-md-4">
                         <div class="single-card">
                             <div class="card-photo">
-                                <img src="https://images.unsplash.com/photo-1423784346385-c1d4dac9893a?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=533&fit=crop&ixid=eyJhcHBfaWQiOjF9" alt="">
+                                <img src="https://images.unsplash.com/photo-1423784346385-c1d4dac9893a?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=533&fit=crop&ixid=eyJhcHBfaWQiOjF9"
+                                     alt="">
                             </div>
                             <div class="card-content">
                                 <h3><a href="#">King Food</a></h3>

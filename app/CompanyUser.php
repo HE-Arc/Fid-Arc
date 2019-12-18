@@ -11,7 +11,7 @@ use Response;
  */
 class CompanyUser extends Pivot
 {
-  const INITIAL_NUMBER_OF_POINTS = 1;
+    const INITIAL_NUMBER_OF_POINTS = 1;
 
     /**
      * Return the relation between the user and the company if it exist, otherwise return false
@@ -38,23 +38,17 @@ class CompanyUser extends Pivot
     private function addPoint($max_number_of_points)
     {
         $http_response = array();
-        if (!$this->has_reward)
-        {
-          $this->number_of_points += 1;
-          if ($this->number_of_points == $max_number_of_points)
-          {
-            $this->number_of_points = 0;
-            $this->has_reward = 1;
-            array_push($http_response, ["status" =>"The user can reclaim his reward.", "number_of_points"=> $this->number_of_points], 202);
-          }
-          else
-          {
-              array_push($http_response, ["status" =>"Number of point is updated.", "number_of_points"=> $this->number_of_points], 202);
-          }
-        }
-        else
-        {
-          array_push($http_response, ["status" =>"Impossible to increment user point. The company must notify user claim is reward.", "number_of_points"=> $this->number_of_points], 409);
+        if (!$this->has_reward) {
+            $this->number_of_points += 1;
+            if ($this->number_of_points == $max_number_of_points) {
+                $this->number_of_points = 0;
+                $this->has_reward = 1;
+                array_push($http_response, ["status" => "The user can reclaim his reward.", "number_of_points" => $this->number_of_points], 202);
+            } else {
+                array_push($http_response, ["status" => "Number of point is updated.", "number_of_points" => $this->number_of_points], 202);
+            }
+        } else {
+            array_push($http_response, ["status" => "Impossible to increment user point. The company must notify user claim is reward.", "number_of_points" => $this->number_of_points], 409);
         }
 
         $this->save();
@@ -74,7 +68,7 @@ class CompanyUser extends Pivot
 
         $cu = CompanyUser::isRelationExsist($user_id, $company_id);
         if (!$cu) {
-          $initial_number_of_point = 1;
+            $initial_number_of_point = 1;
             CompanyUser::create([
                 'user_id' => $user_id,
                 'company_id' => $company_id,
@@ -82,7 +76,7 @@ class CompanyUser extends Pivot
                 'is_subscribed_to_emails' => 1,
                 'has_reward' => 0
             ]);
-            array_push($http_response, ["status" =>"The relation between user and company is created.", "number_of_points"=> CompanyUser::INITIAL_NUMBER_OF_POINTS], 201);
+            array_push($http_response, ["status" => "The relation between user and company is created.", "number_of_points" => CompanyUser::INITIAL_NUMBER_OF_POINTS], 201);
             return $http_response;
         } else {
             return $cu->addPoint($company['number_fidelity_points']);

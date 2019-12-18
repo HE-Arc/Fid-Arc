@@ -1,5 +1,7 @@
 <?php
+
 namespace App;
+
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -18,9 +20,9 @@ class User extends Authenticatable
      * HasOne relationship to the company
      * @return Object relationship to the company
      */
-     public function company()
+    public function company()
     {
-      return $this->hasOne("App\Company");
+        return $this->hasOne("App\Company");
     }
 
     /**
@@ -30,7 +32,7 @@ class User extends Authenticatable
      */
     public function fidelityCards()
     {
-      return $this->belongsToMany("App\Company")->using('App\CompanyUser')->withPivot('number_of_points');
+        return $this->belongsToMany("App\Company")->using('App\CompanyUser')->withPivot('number_of_points');
     }
 
     /**

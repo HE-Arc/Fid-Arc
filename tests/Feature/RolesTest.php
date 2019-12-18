@@ -7,11 +7,11 @@ use App\User;
 
 class RolesTest extends TestCase
 {
-  public function setUp():void
-  {
-    parent::setUp();
-    $this->seed('TestDatabaseSeeder');//Run seeder
-  }
+    public function setUp(): void
+    {
+        parent::setUp();
+        $this->seed('TestDatabaseSeeder');//Run seeder
+    }
 
     public function testUserHasRoleClient()
     {
@@ -20,6 +20,6 @@ class RolesTest extends TestCase
 
     public function testUserHasRoleCompany()
     {
-      $this->assertTrue(User::where('email', 'company@test.com')->first()->hasRole('company'));
+        $this->assertTrue(User::where('email', 'company@test.com')->first()->hasRole('company'));
     }
 }
